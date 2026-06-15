@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gutter Ninjas | Homepage 1 Layout with Homepage 2 Colors</title>
-  <meta name="description" content="Gutter Ninjas provides fast gutter cleaning, minor roof and shingle repair, downspout clearing, inspections, and seasonal maintenance." />
+  <meta name="description" content="Gutter Ninjas provides fast gutter and downspout cleaning, minor roof and shingle repair, inspections, and seasonal maintenance." />
   <style>
     :root {
       --dark: #111827;
@@ -312,6 +312,13 @@
       font-size: 1.05rem;
     }
 
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
     .grid-3 {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -364,6 +371,158 @@
       padding-left: 1.2rem;
       color: #334155;
       font-weight: 650;
+    }
+
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .problem-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 1.35rem;
+      box-shadow: var(--shadow);
+    }
+
+    .problem-card h3 {
+      margin: 0;
+      font-size: 1.55rem;
+      letter-spacing: -.04em;
+    }
+
+    .problem-card p {
+      color: var(--muted);
+      margin: .7rem 0 1rem;
+    }
+
+    .impact-list {
+      display: grid;
+      gap: .7rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .impact-list li {
+      display: flex;
+      gap: .65rem;
+      align-items: flex-start;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: .85rem;
+      color: #334155;
+      font-weight: 700;
+    }
+
+    .impact-list li span {
+      display: inline-grid;
+      place-items: center;
+      flex: 0 0 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #dcfce7;
+      color: #14532d;
+      font-weight: 950;
+      line-height: 1;
+    }
+
+    .maintenance-note {
+      margin-top: 1rem;
+      background: linear-gradient(135deg, rgba(34,197,94,.12), rgba(251,146,60,.12));
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 1rem;
+      color: #334155;
+      font-weight: 800;
+    }
+
+
+    .review-form-section {
+      background:
+        radial-gradient(circle at top left, rgba(34,197,94,.14), transparent 28rem),
+        #ffffff;
+      border-radius: 36px;
+    }
+
+    .review-panel {
+      display: grid;
+      grid-template-columns: .82fr 1.18fr;
+      gap: 1rem;
+      align-items: stretch;
+    }
+
+    .review-invite,
+    .review-form-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 1.35rem;
+      box-shadow: var(--shadow);
+    }
+
+    .review-invite h3,
+    .review-form-card h3 {
+      margin: 0;
+      font-size: 1.55rem;
+      letter-spacing: -.04em;
+    }
+
+    .review-invite p,
+    .review-form-card p {
+      color: var(--muted);
+    }
+
+    .review-options {
+      display: grid;
+      gap: .65rem;
+      margin-top: 1rem;
+    }
+
+    .review-option {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: .85rem;
+      color: #334155;
+      font-weight: 800;
+    }
+
+    .rating-row {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: .4rem;
+    }
+
+    .rating-row label {
+      display: block;
+    }
+
+    .rating-row input {
+      display: none;
+    }
+
+    .rating-row span {
+      display: grid;
+      place-items: center;
+      min-height: 44px;
+      border-radius: 14px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      cursor: pointer;
+      font-size: 1.05rem;
+      line-height: 1;
+      text-align: center;
+    }
+
+    .rating-row input:checked + span {
+      background: #dcfce7;
+      border-color: var(--green);
+      box-shadow: 0 0 0 4px rgba(34,197,94,.12);
     }
 
     .checker {
@@ -452,42 +611,6 @@
       margin-bottom: .85rem;
     }
 
-    .reviews {
-      background:
-        radial-gradient(circle at top left, rgba(34,197,94,.14), transparent 28rem),
-        #ffffff;
-      border-radius: 36px;
-    }
-
-    .review-grid {
-      display: grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 1rem;
-    }
-
-    .review-large, .review-side {
-      background: #fff;
-      border-radius: 28px;
-      padding: 1.4rem;
-      box-shadow: var(--shadow);
-    }
-
-    .stars { color: #eab308; font-size: 1.1rem; letter-spacing: .06em; }
-    blockquote {
-      margin: .8rem 0;
-      font-size: 1.35rem;
-      line-height: 1.35;
-      letter-spacing: -.03em;
-      font-weight: 850;
-    }
-
-    .review-side article {
-      border-bottom: 1px solid #e2e8f0;
-      padding: 1rem 0;
-    }
-
-    .review-side article:first-child { padding-top: 0; }
-    .review-side article:last-child { border-bottom: 0; padding-bottom: 0; }
 
     .cta {
       max-width: 1180px;
@@ -555,11 +678,14 @@
     @media (max-width: 900px) {
       .hero-wrap,
       .checker,
-      .review-grid {
+      .review-grid,
+      .problem-grid,
+      .review-panel {
         grid-template-columns: 1fr;
       }
 
       .grid-3,
+      .service-grid,
       .process {
         grid-template-columns: 1fr 1fr;
       }
@@ -572,6 +698,7 @@
     @media (max-width: 620px) {
       .field-row,
       .grid-3,
+      .service-grid,
       .process,
       .hero-stats {
         grid-template-columns: 1fr;
@@ -583,7 +710,7 @@
   </style>
 </head>
 <body>
-  <div class="topbar">🥷 Spring cleanup slots available — <strong>ask about same-week gutter cleaning</strong></div>
+  <div class="topbar">🥷 Protect your home before the next storm — <strong>request a roofline and gutter check</strong></div>
 
   <header>
     <nav class="nav" aria-label="Main navigation">
@@ -594,9 +721,10 @@
 
       <div class="navlinks">
         <a href="#services">Services</a>
+        <a href="#home-risks">Home Risks</a>
         <a href="#checker">Do I Need Service?</a>
+        <a href="#reviews">Leave a Review</a>
         <a href="#process">How It Works</a>
-        <a href="#reviews">Reviews</a>
       </div>
 
       <a class="btn btn-primary" href="#quote">Get Free Quote</a>
@@ -606,11 +734,11 @@
   <section class="hero" id="top">
     <div class="hero-wrap">
       <div>
-        <div class="eyebrow">⚡ Fast response • Fully insured • Clean finish</div>
+        <div class="eyebrow">⚡ Prompt scheduling • Careful workmanship • Clean finish</div>
         <h1>Silent on the roof. <span>Deadly</span> on clogs.</h1>
         <p>
-          Gutter Ninjas helps homeowners prevent water damage with gutter cleaning,
-          downspout clearing, roofline inspection, and minor shingle repair.
+          Gutter Ninjas provides dependable gutter and downspout cleaning,
+          roofline inspections, and minor shingle repair to help protect your home from avoidable water damage.
         </p>
 
         <div class="hero-actions">
@@ -621,13 +749,13 @@
         <div class="hero-stats" aria-label="Company highlights">
           <div class="stat"><strong>24–48 hr</strong><span>Typical response</span></div>
           <div class="stat"><strong>4-step</strong><span>Cleanup process</span></div>
-          <div class="stat"><strong>100%</strong><span>Debris hauled away</span></div>
+          <div class="stat"><strong>Optional</strong><span>Debris haul-off</span></div>
         </div>
       </div>
 
       <aside class="quote-card" id="quote" aria-label="Quote request form">
-        <h2>Get your free roofline check</h2>
-        <p>Tell us what you need. This demo form can be connected to email, CRM, or booking software.</p>
+        <h2>Request a professional roofline assessment</h2>
+        <p>Share a few details about your home and we will help identify the right service for your roofline, gutters, or shingles.</p>
 
         <form id="quoteForm">
           <div class="field-row">
@@ -644,10 +772,18 @@
           <label>
             Service needed
             <select name="service">
-              <option>Gutter cleaning</option>
-              <option>Downspout clearing</option>
+              <option>Gutter &amp; downspout cleaning</option>
               <option>Shingle repair</option>
               <option>Inspection / not sure</option>
+            </select>
+          </label>
+
+          <label>
+            Debris preference
+            <select name="debris">
+              <option>Blend debris into natural landscape areas when suitable</option>
+              <option>Haul debris off property — additional fee applies</option>
+              <option>Please advise me during the estimate</option>
             </select>
           </label>
 
@@ -677,8 +813,8 @@
             <textarea rows="3" placeholder="Tell us about overflowing gutters, leaks, loose shingles, or trouble spots."></textarea>
           </label>
 
-          <button class="btn btn-dark" type="submit">Send Quote Request</button>
-          <div class="success" id="formSuccess">Thanks! Your request is ready to send. Connect this form to your email or booking system.</div>
+          <button class="btn btn-dark" type="submit">Request My Estimate</button>
+          <div class="success" id="formSuccess">Thank you. Your request has been received in this demo. Connect this form to your email or booking system before publishing.</div>
         </form>
       </aside>
     </div>
@@ -688,54 +824,87 @@
     <section id="services">
       <div class="section-heading">
         <div>
-          <h2>Roofline services that stop problems early.</h2>
-          <p>Simple, homeowner-friendly service blocks that explain what the company does and why it matters.</p>
+          <h2>Preventive roofline services for a healthier home.</h2>
+          <p>Clear, practical services designed to improve drainage, reduce water exposure, and catch small issues before they become costly repairs.</p>
         </div>
-        <a class="btn btn-dark" href="#quote">Book Service</a>
+        <a class="btn btn-dark" href="#quote">Schedule Service</a>
       </div>
 
-      <div class="grid-3">
-        <article class="service">
-          <div class="icon">🍂</div>
-          <h3>Gutter Cleaning</h3>
-          <p>Leaves, roof grit, sticks, and packed debris removed so rainwater flows away from your home.</p>
-          <ul>
-            <li>Hand-cleaned gutters</li>
-            <li>Debris bagged and removed</li>
-            <li>Final flow check</li>
-          </ul>
-        </article>
-
+      <div class="service-grid">
         <article class="service">
           <div class="icon">💧</div>
-          <h3>Downspout Clearing</h3>
-          <p>Clogged elbows and buried blockages cleared to prevent overflow, foundation pooling, and ice issues.</p>
+          <h3>Gutter & Downspout Cleaning</h3>
+          <p>Gutters and downspouts are serviced together because they work as one drainage system. We remove debris from the gutter runs, clear the downspout path, and check that water can move safely away from the home.</p>
           <ul>
-            <li>Elbows checked</li>
-            <li>Water-flow test</li>
-            <li>Minor adjustments</li>
+            <li>Leaves, sticks, roof grit, and packed debris removed from the gutter system</li>
+            <li>Downspout openings and elbows checked for blockages</li>
+            <li>Water-flow check where appropriate</li>
+            <li>Standard cleanup: debris is blended into natural landscape areas on the property when suitable</li>
+            <li>Optional haul-off: debris removal from the property is available for an additional fee</li>
           </ul>
         </article>
 
         <article class="service">
           <div class="icon">🏠</div>
-          <h3>Shingle Repair</h3>
-          <p>Loose, lifted, or missing shingles addressed before a small leak turns into an expensive repair.</p>
+          <h3>Minor Shingle Repair</h3>
+          <p>Loose, lifted, cracked, or missing shingles can expose the roof system to water. We help identify visible shingle concerns and handle minor repairs when appropriate.</p>
           <ul>
-            <li>Missing shingle replacement</li>
-            <li>Lifted tab repair</li>
-            <li>Storm damage photos</li>
+            <li>Missing or damaged shingles reviewed</li>
+            <li>Lifted tabs and small problem areas checked</li>
+            <li>Visible roofline concerns documented</li>
+            <li>Repair recommendations explained clearly</li>
           </ul>
         </article>
       </div>
     </section>
 
+    <section id="home-risks">
+      <div class="section-heading">
+        <div>
+          <h2>What clogged gutters and damaged shingles can do to your home.</h2>
+          <p>Small roofline problems often start quietly. Regular maintenance helps reduce water exposure and gives homeowners a chance to fix minor issues before they spread.</p>
+        </div>
+        <a class="btn btn-dark" href="#quote">Check My Home</a>
+      </div>
+
+      <div class="problem-grid">
+        <article class="problem-card">
+          <div class="icon">💧</div>
+          <h3>Clogged gutters can redirect water where it does not belong.</h3>
+          <p>When gutters cannot drain correctly, rainwater can spill over the edge, back up near the roofline, or collect around the base of the home.</p>
+          <ul class="impact-list">
+            <li><span>1</span><strong>Foundation moisture:</strong> Overflow can pool near the foundation and contribute to settling, cracks, or basement dampness.</li>
+            <li><span>2</span><strong>Fascia and soffit damage:</strong> Trapped water can soak roofline wood, leading to rot, staining, and pest-friendly soft spots.</li>
+            <li><span>3</span><strong>Siding and landscape damage:</strong> Constant spillover can stain siding, wash out mulch, and damage plants or walkways below.</li>
+            <li><span>4</span><strong>Winter ice problems:</strong> Blocked drainage can make freezing conditions worse and add stress along the gutter line.</li>
+          </ul>
+        </article>
+
+        <article class="problem-card">
+          <div class="icon">🏠</div>
+          <h3>Broken or missing shingles can expose the roof system.</h3>
+          <p>Shingles are your roof’s first line of defense. A small damaged area can let wind-driven rain reach materials that are not meant to stay wet.</p>
+          <ul class="impact-list">
+            <li><span>1</span><strong>Roof leaks:</strong> Water can enter beneath lifted, cracked, or missing shingles and show up as ceiling stains.</li>
+            <li><span>2</span><strong>Decking deterioration:</strong> Repeated moisture can weaken the wood sheathing under the shingles.</li>
+            <li><span>3</span><strong>Insulation and attic issues:</strong> Water intrusion can reduce insulation performance and create damp attic conditions.</li>
+            <li><span>4</span><strong>Higher repair costs:</strong> Addressing a small shingle issue early is often simpler than waiting for interior water damage.</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="maintenance-note">
+        Gutter Ninjas focuses on practical maintenance: clear the full gutter and downspout drainage path, inspect visible trouble spots, document concerns, and recommend the next best step.
+      </div>
+    </section>
+
+
     <section id="checker">
       <div class="checker">
         <div>
           <h2>Not sure if you need service?</h2>
-          <p>Use this simple customer-interaction checklist. It educates visitors and nudges them toward requesting a quote.</p>
-          <a class="btn btn-primary" href="#quote">Ask a Ninja</a>
+          <p>Use this quick checklist to identify warning signs that your gutters or shingles may need attention.</p>
+          <a class="btn btn-primary" href="#quote">Request Guidance</a>
         </div>
 
         <div class="checklist">
@@ -756,7 +925,7 @@
             <span><strong>You see missing, curled, or lifted shingles</strong><br />A small roofline repair may prevent interior leaks.</span>
           </label>
 
-          <div class="estimate-box" id="riskBox">Risk level: <span>Low</span> — a quick inspection is still smart before heavy rain.</div>
+          <div class="estimate-box" id="riskBox">Risk level: <span>Low</span> — a seasonal inspection is still a smart way to stay ahead of weather-related issues.</div>
         </div>
       </div>
     </section>
@@ -764,62 +933,86 @@
     <section id="process">
       <div class="section-heading">
         <div>
-          <h2>Easy process. No roof drama.</h2>
-          <p>A clear process helps customers feel safe before they submit a form or call.</p>
+          <h2>A simple, professional service process.</h2>
+          <p>A clear process helps homeowners know what to expect before, during, and after service.</p>
         </div>
       </div>
 
       <div class="process">
         <article class="step">
           <h3>Send details</h3>
-          <p>Customer shares address, home type, service need, and photos if available.</p>
+          <p>Share your contact information, home type, service concern, and photos if available.</p>
         </article>
         <article class="step">
           <h3>Get estimate</h3>
-          <p>Team confirms scope, timing, and price range before arrival.</p>
+          <p>We review the details, confirm the scope, and provide scheduling information.</p>
         </article>
         <article class="step">
           <h3>Clean or repair</h3>
-          <p>Gutters are cleared, downspouts tested, or minor shingles repaired.</p>
+          <p>The gutter and downspout system is cleaned and checked together. Debris can be blended into suitable landscape areas, or hauled off for an additional fee.</p>
         </article>
         <article class="step">
           <h3>Photo recap</h3>
-          <p>Customer receives before/after notes and recommendations.</p>
+          <p>You receive a clear recap with notes, photos, and recommended next steps.</p>
         </article>
       </div>
     </section>
 
-    <section class="reviews" id="reviews">
+
+    <section class="review-form-section" id="reviews">
       <div class="section-heading">
         <div>
-          <h2>Built for trust from the first click.</h2>
-          <p>Replace these sample testimonials with real reviews once the business collects them.</p>
+          <h2>Leave a review for Gutter Ninjas.</h2>
+          <p>Customer feedback helps new homeowners feel confident and helps the business improve after every job.</p>
         </div>
       </div>
 
-      <div class="review-grid">
-        <div class="review-large">
-          <div class="stars">★★★★★</div>
-          <blockquote>“They showed up fast, explained everything, cleaned the mess, and sent photos of the gutters afterward.”</blockquote>
-          <strong>— Sample customer review</strong>
-        </div>
+      <div class="review-panel">
+        <aside class="review-invite">
+          <div class="icon">⭐</div>
+          <h3>Share your experience.</h3>
+          <p>Use this section as a review collection area. It does not display fake testimonials, but it gives real customers a clear place to leave feedback.</p>
+          <div class="review-options">
+            <div class="review-option">Ask customers about communication, cleanup, and service quality.</div>
+            <div class="review-option">Connect this form to email, Google Forms, a CRM, or a review platform.</div>
+            <div class="review-option">Replace the button link later with your Google Business Profile review link.</div>
+          </div>
+        </aside>
 
-        <div class="review-side">
-          <article>
-            <div class="stars">★★★★★</div>
-            <p>“The quote was simple and the work was finished before the next storm.”</p>
-          </article>
-          <article>
-            <div class="stars">★★★★★</div>
-            <p>“They caught a loose shingle while cleaning the gutters and fixed it same day.”</p>
-          </article>
-        </div>
+        <form class="review-form-card" id="reviewForm">
+          <h3>How did we do?</h3>
+          <p>This demo form can be connected before publishing.</p>
+
+          <label>
+            Your name
+            <input name="reviewer-name" placeholder="Your name" />
+          </label>
+
+          <label>
+            Rating
+            <div class="rating-row" aria-label="Star rating">
+              <label><input type="radio" name="rating" value="1" /><span>★</span></label>
+              <label><input type="radio" name="rating" value="2" /><span>★★</span></label>
+              <label><input type="radio" name="rating" value="3" /><span>★★★</span></label>
+              <label><input type="radio" name="rating" value="4" /><span>★★★★</span></label>
+              <label><input type="radio" name="rating" value="5" checked /><span>★★★★★</span></label>
+            </div>
+          </label>
+
+          <label>
+            Review
+            <textarea rows="4" name="review" placeholder="Tell us about your experience with the service, communication, and cleanup."></textarea>
+          </label>
+
+          <button class="btn btn-dark" type="submit">Submit Review</button>
+          <div class="success" id="reviewSuccess">Thank you for your feedback. Connect this form before publishing so reviews are delivered to the business.</div>
+        </form>
       </div>
     </section>
 
     <div class="cta">
-      <h2>Ready to protect your home from the next rain?</h2>
-      <p>Make the next step obvious: call, text, or request a free quote. This is where most service websites win or lose customers.</p>
+      <h2>Ready to protect your home from preventable water damage?</h2>
+      <p>Routine gutter and roofline maintenance can help reduce the risk of leaks, overflow, wood rot, and foundation moisture problems.</p>
       <div class="hero-actions" style="justify-content:center">
         <a class="btn btn-primary" href="#quote">Get Free Quote</a>
         <a class="btn btn-light" href="tel:+15551234567">Call Now</a>
@@ -831,10 +1024,10 @@
     <div class="footer-wrap">
       <div>
         <strong>🥷 Gutter Ninjas</strong><br />
-        Gutter cleaning • Downspouts • Minor shingle repair
+        Gutter &amp; downspout cleaning • Minor shingle repair
       </div>
       <div>
-        Replace with service area, license/insurance note, email, and real phone number.
+        Replace with service area, email address, real phone number, and any required local business information.
       </div>
     </div>
   </footer>
@@ -867,15 +1060,27 @@
       });
 
       if (score === 0) {
-        riskBox.innerHTML = 'Risk level: <span>Low</span> — a quick inspection is still smart before heavy rain.';
+        riskBox.innerHTML = 'Risk level: <span>Low</span> — a seasonal inspection is still a smart way to stay ahead of weather-related issues.';
       } else if (score <= 2) {
-        riskBox.innerHTML = 'Risk level: <span>Medium</span> — schedule cleaning or inspection soon.';
+        riskBox.innerHTML = 'Risk level: <span>Medium</span> — schedule a cleaning or roofline inspection soon.';
       } else {
-        riskBox.innerHTML = 'Risk level: <span>High</span> — request service before the next storm.';
+        riskBox.innerHTML = 'Risk level: <span>High</span> — request service before the next heavy rain or storm.';
       }
     }
 
     checks.forEach(check => check.addEventListener("change", updateRisk));
+
+    const reviewForm = document.querySelector("#reviewForm");
+    const reviewSuccess = document.querySelector("#reviewSuccess");
+
+    if (reviewForm && reviewSuccess) {
+      reviewForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+        reviewSuccess.style.display = "block";
+        reviewSuccess.scrollIntoView({ behavior: "smooth", block: "center" });
+      });
+    }
+
   </script>
 </body>
 </html>
