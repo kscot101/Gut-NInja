@@ -693,6 +693,11 @@
       box-shadow: 0 18px 38px rgba(15,23,42,.28);
     }
 
+
+    .hidden-field {
+      display: none !important;
+    }
+
     .success {
       display: none;
       margin-top: .8rem;
@@ -785,7 +790,10 @@
         <h2>Request a professional roofline assessment</h2>
         <p>Share a few details about your home and we will help identify the right service for your roofline, gutters, or shingles.</p>
 
-        <form id="quoteForm">
+        <form id="quoteForm" action="https://formspree.io/f/mojzrnzp" method="POST">
+          <input type="hidden" name="_subject" value="New Gutter Ninjas Estimate Request" />
+          <input type="hidden" name="form_type" value="Estimate request" />
+          <label class="hidden-field">Leave this field empty <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" /></label>
           <div class="field-row">
             <label>
               Name
@@ -798,6 +806,11 @@
           </div>
 
           <label>
+            Email
+            <input type="email" name="email" placeholder="you@example.com" />
+          </label>
+
+          <label>
             Service needed
             <select name="service">
               <option>Gutter &amp; downspout cleaning</option>
@@ -807,7 +820,7 @@
           </label>
 
           <label class="checkbox-field">
-            <input type="checkbox" name="debris-haul-off" value="requested" />
+            <input type="checkbox" name="debris_haul_off_requested" value="Yes, customer requested debris haul-off for an additional fee" />
             <div>
               Debris haul-off requested
               <span>Standard cleanup blends debris into suitable natural landscape areas when possible. Haul-off is available for an additional fee.</span>
@@ -837,11 +850,11 @@
 
           <label>
             Notes
-            <textarea rows="3" placeholder="Tell us about overflowing gutters, leaks, loose shingles, or trouble spots."></textarea>
+            <textarea rows="3" name="notes" placeholder="Tell us about overflowing gutters, leaks, loose shingles, or trouble spots."></textarea>
           </label>
 
           <button class="btn btn-dark" type="submit">Request My Estimate</button>
-          <div class="success" id="formSuccess">Thank you. Your request has been received in this demo. Connect this form to your email or booking system before publishing.</div>
+          <div class="success" id="formSuccess">Thank you. Your request is being sent.</div>
         </form>
       </aside>
     </div>
@@ -1006,9 +1019,12 @@
           </div>
         </aside>
 
-        <form class="review-form-card" id="reviewForm">
+        <form class="review-form-card" id="reviewForm" action="https://formspree.io/f/mojzrnzp" method="POST">
+          <input type="hidden" name="_subject" value="New Gutter Ninjas Review" />
+          <input type="hidden" name="form_type" value="Customer review" />
+          <label class="hidden-field">Leave this field empty <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" /></label>
           <h3>How did we do?</h3>
-          <p>This demo form can be connected before publishing.</p>
+          <p>Submit your feedback and it will be sent directly to Gutter Ninjas.</p>
 
           <label>
             Your name
@@ -1032,7 +1048,7 @@
           </label>
 
           <button class="btn btn-dark" type="submit">Submit Review</button>
-          <div class="success" id="reviewSuccess">Thank you for your feedback. Connect this form before publishing so reviews are delivered to the business.</div>
+          <div class="success" id="reviewSuccess">Thank you for your feedback.</div>
         </form>
       </div>
     </section>
@@ -1062,15 +1078,6 @@
   <a class="btn btn-primary mobile-call" href="tel:+15551234567">Call Gutter Ninjas</a>
 
   <script>
-    const form = document.querySelector("#quoteForm");
-    const success = document.querySelector("#formSuccess");
-
-    form.addEventListener("submit", function(event) {
-      event.preventDefault();
-      success.style.display = "block";
-      form.scrollIntoView({ behavior: "smooth", block: "center" });
-    });
-
     const checks = document.querySelectorAll(".check-item input");
     const riskBox = document.querySelector("#riskBox");
 
@@ -1096,18 +1103,6 @@
     }
 
     checks.forEach(check => check.addEventListener("change", updateRisk));
-
-    const reviewForm = document.querySelector("#reviewForm");
-    const reviewSuccess = document.querySelector("#reviewSuccess");
-
-    if (reviewForm && reviewSuccess) {
-      reviewForm.addEventListener("submit", function(event) {
-        event.preventDefault();
-        reviewSuccess.style.display = "block";
-        reviewSuccess.scrollIntoView({ behavior: "smooth", block: "center" });
-      });
-    }
-
   </script>
 </body>
 </html>
