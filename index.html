@@ -477,15 +477,9 @@
       border-radius: 36px;
     }
 
-    .review-panel {
-      display: grid;
-      grid-template-columns: .82fr 1.18fr;
-      gap: 1rem;
-      align-items: stretch;
-    }
-
-    .review-invite,
     .review-form-card {
+      max-width: 860px;
+      margin: 0 auto;
       background: #fff;
       border: 1px solid var(--line);
       border-radius: 28px;
@@ -493,31 +487,14 @@
       box-shadow: var(--shadow);
     }
 
-    .review-invite h3,
     .review-form-card h3 {
       margin: 0;
       font-size: 1.55rem;
       letter-spacing: -.04em;
     }
 
-    .review-invite p,
     .review-form-card p {
       color: var(--muted);
-    }
-
-    .review-options {
-      display: grid;
-      gap: .65rem;
-      margin-top: 1rem;
-    }
-
-    .review-option {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-radius: 16px;
-      padding: .85rem;
-      color: #334155;
-      font-weight: 800;
     }
 
     .rating-row {
@@ -712,8 +689,7 @@
       .hero-wrap,
       .checker,
       .review-grid,
-      .problem-grid,
-      .review-panel {
+      .problem-grid {
         grid-template-columns: 1fr;
       }
 
@@ -756,7 +732,7 @@
         <a href="#services">Services</a>
         <a href="#home-risks">Home Risks</a>
         <a href="#checker">Do I Need Service?</a>
-        <a href="#reviews">Leave a Review</a>
+        <a href="#reviews">Share Your Experience</a>
         <a href="#process">How It Works</a>
       </div>
 
@@ -999,58 +975,54 @@
     </section>
 
 
+
+
     <section class="review-form-section" id="reviews">
       <div class="section-heading">
         <div>
-          <h2>Leave a review for Gutter Ninjas.</h2>
-          <p>Customer feedback helps new homeowners feel confident and helps the business improve after every job.</p>
+          <h2>Share your experience with Gutter Ninjas.</h2>
+          <p>Your feedback helps us improve our service and helps other homeowners know what to expect.</p>
         </div>
       </div>
 
-      <div class="review-panel">
-        <aside class="review-invite">
-          <div class="icon">⭐</div>
-          <h3>Share your experience.</h3>
-          <p>Use this section as a review collection area. It does not display fake testimonials, but it gives real customers a clear place to leave feedback.</p>
-          <div class="review-options">
-            <div class="review-option">Ask customers about communication, cleanup, and service quality.</div>
-            <div class="review-option">Connect this form to email, Google Forms, a CRM, or a review platform.</div>
-            <div class="review-option">Replace the button link later with your Google Business Profile review link.</div>
-          </div>
-        </aside>
+      <form class="review-form-card" id="reviewForm" action="https://formspree.io/f/mojzrnzp" method="POST">
+        <input type="hidden" name="_subject" value="New Gutter Ninjas Review" />
+        <input type="hidden" name="form_type" value="Customer review" />
+        <label class="hidden-field">Leave this field empty <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" /></label>
 
-        <form class="review-form-card" id="reviewForm" action="https://formspree.io/f/mojzrnzp" method="POST">
-          <input type="hidden" name="_subject" value="New Gutter Ninjas Review" />
-          <input type="hidden" name="form_type" value="Customer review" />
-          <label class="hidden-field">Leave this field empty <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" /></label>
-          <h3>How did we do?</h3>
-          <p>Submit your feedback and it will be sent directly to Gutter Ninjas.</p>
+        <h3>Leave a review</h3>
+        <p>Tell us about your experience with scheduling, communication, cleanup, and the work completed.</p>
 
+        <div class="field-row">
           <label>
             Your name
             <input name="reviewer-name" placeholder="Your name" />
           </label>
 
           <label>
-            Rating
-            <div class="rating-row" aria-label="Star rating">
-              <label><input type="radio" name="rating" value="1" /><span>★</span></label>
-              <label><input type="radio" name="rating" value="2" /><span>★★</span></label>
-              <label><input type="radio" name="rating" value="3" /><span>★★★</span></label>
-              <label><input type="radio" name="rating" value="4" /><span>★★★★</span></label>
-              <label><input type="radio" name="rating" value="5" checked /><span>★★★★★</span></label>
-            </div>
+            Email
+            <input type="email" name="reviewer-email" placeholder="you@example.com" />
           </label>
+        </div>
 
-          <label>
-            Review
-            <textarea rows="4" name="review" placeholder="Tell us about your experience with the service, communication, and cleanup."></textarea>
-          </label>
+        <label>
+          Rating
+          <div class="rating-row" aria-label="Star rating">
+            <label><input type="radio" name="rating" value="1" /><span>★</span></label>
+            <label><input type="radio" name="rating" value="2" /><span>★★</span></label>
+            <label><input type="radio" name="rating" value="3" /><span>★★★</span></label>
+            <label><input type="radio" name="rating" value="4" /><span>★★★★</span></label>
+            <label><input type="radio" name="rating" value="5" checked /><span>★★★★★</span></label>
+          </div>
+        </label>
 
-          <button class="btn btn-dark" type="submit">Submit Review</button>
-          <div class="success" id="reviewSuccess">Thank you for your feedback.</div>
-        </form>
-      </div>
+        <label>
+          Review
+          <textarea rows="5" name="review" placeholder="Example: The crew communicated clearly, cleaned the gutters, explained the debris haul-off option, and left the work area tidy."></textarea>
+        </label>
+
+        <button class="btn btn-dark" type="submit">Submit Review</button>
+      </form>
     </section>
 
     <div class="cta">
