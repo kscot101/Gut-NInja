@@ -278,6 +278,34 @@
       box-shadow: 0 0 0 4px rgba(33,197,93,.12);
     }
 
+
+    .checkbox-field {
+      display: flex;
+      align-items: flex-start;
+      gap: .75rem;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: .85rem;
+      color: #334155;
+      font-weight: 800;
+    }
+
+    .checkbox-field input {
+      width: auto;
+      margin-top: .25rem;
+      flex: 0 0 auto;
+      accent-color: var(--green);
+    }
+
+    .checkbox-field span {
+      display: block;
+      color: var(--muted);
+      font-weight: 700;
+      font-size: .92rem;
+      margin-top: .15rem;
+    }
+
     .field-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -749,7 +777,7 @@
         <div class="hero-stats" aria-label="Company highlights">
           <div class="stat"><strong>24–48 hr</strong><span>Typical response</span></div>
           <div class="stat"><strong>4-step</strong><span>Cleanup process</span></div>
-          <div class="stat"><strong>Optional</strong><span>Debris haul-off</span></div>
+          <div class="stat"><strong>Available</strong><span>Debris haul-off</span></div>
         </div>
       </div>
 
@@ -778,13 +806,12 @@
             </select>
           </label>
 
-          <label>
-            Debris preference
-            <select name="debris">
-              <option>Blend debris into natural landscape areas when suitable</option>
-              <option>Haul debris off property — additional fee applies</option>
-              <option>Please advise me during the estimate</option>
-            </select>
+          <label class="checkbox-field">
+            <input type="checkbox" name="debris-haul-off" value="requested" />
+            <div>
+              Debris haul-off requested
+              <span>Standard cleanup blends debris into suitable natural landscape areas when possible. Haul-off is available for an additional fee.</span>
+            </div>
           </label>
 
           <div class="field-row">
@@ -840,7 +867,7 @@
             <li>Downspout openings and elbows checked for blockages</li>
             <li>Water-flow check where appropriate</li>
             <li>Standard cleanup: debris is blended into natural landscape areas on the property when suitable</li>
-            <li>Optional haul-off: debris removal from the property is available for an additional fee</li>
+            <li>Debris haul-off: available for an additional fee when the customer requests debris removal from the property</li>
           </ul>
         </article>
 
