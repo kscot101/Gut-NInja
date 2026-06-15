@@ -551,6 +551,42 @@
 
     .checker p { color: #cbd5e1; }
 
+
+    .guidance-form {
+      display: grid;
+      gap: .75rem;
+    }
+
+    .guidance-contact {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .75rem;
+      margin-top: .75rem;
+    }
+
+    .guidance-note {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 18px;
+      padding: .9rem;
+      color: #334155;
+      font-weight: 800;
+      margin-top: .75rem;
+    }
+
+    .guidance-submit-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+      align-items: center;
+      margin-top: .75rem;
+    }
+
+    .guidance-submit-row small {
+      color: var(--muted);
+      font-weight: 750;
+    }
+
     .checklist {
       background: #fff;
       color: var(--dark);
@@ -706,6 +742,7 @@
 
     @media (max-width: 620px) {
       .field-row,
+      .guidance-contact,
       .grid-3,
       .service-grid,
       .process,
@@ -731,7 +768,7 @@
       <div class="navlinks">
         <a href="#services">Services</a>
         <a href="#home-risks">Home Risks</a>
-        <a href="#checker">Do I Need Service?</a>
+        <a href="#checker">Guidance Inquiry</a>
         <a href="#reviews">Share Your Experience</a>
         <a href="#process">How It Works</a>
       </div>
@@ -758,7 +795,7 @@
         <div class="hero-stats" aria-label="Company highlights">
           <div class="stat"><strong>24–48 hr</strong><span>Typical response</span></div>
           <div class="stat"><strong>4-step</strong><span>Cleanup process</span></div>
-          <div class="stat"><strong>Available</strong><span>Debris haul-off</span></div>
+          <div class="stat"><strong>$20/bag</strong><span>Debris bagging</span></div>
         </div>
       </div>
 
@@ -796,10 +833,10 @@
           </label>
 
           <label class="checkbox-field">
-            <input type="checkbox" name="debris_haul_off_requested" value="Yes, customer requested debris haul-off for an additional fee" />
+            <input type="checkbox" name="debris_bagging_requested" value="Yes, customer requested debris bagging at $20 per filled lawn bag" />
             <div>
-              Debris haul-off requested
-              <span>Standard cleanup blends debris into suitable natural landscape areas when possible. Haul-off is available for an additional fee.</span>
+              Debris bagging requested
+              <span>Debris is normally blended into suitable natural landscape areas when possible. If bagging is requested, it is $20 per filled lawn bag and the filled bags are left on-site for the customer’s trash service.</span>
             </div>
           </label>
 
@@ -854,9 +891,8 @@
           <ul>
             <li>Leaves, sticks, roof grit, and packed debris removed from the gutter system</li>
             <li>Downspout openings and elbows checked for blockages</li>
-            <li>Water-flow check where appropriate</li>
             <li>Standard cleanup: debris is blended into natural landscape areas on the property when suitable</li>
-            <li>Debris haul-off: available for an additional fee when the customer requests debris removal from the property</li>
+            <li>Debris bagging: $20 per filled lawn bag, left on-site for the customer’s trash service</li>
           </ul>
         </article>
 
@@ -919,30 +955,62 @@
       <div class="checker">
         <div>
           <h2>Not sure if you need service?</h2>
-          <p>Use this quick checklist to identify warning signs that your gutters or shingles may need attention.</p>
-          <a class="btn btn-primary" href="#quote">Request Guidance</a>
+          <p>Send a quick guidance inquiry before booking. This is helpful for homeowners who have a question, are unsure what they are seeing, or want to know whether an on-site service visit makes sense.</p>
+          <a class="btn btn-primary" href="#guidanceForm">Ask a Question</a>
         </div>
 
-        <div class="checklist">
+        <form class="checklist guidance-form" id="guidanceForm" action="https://formspree.io/f/mojzrnzp" method="POST">
+          <input type="hidden" name="_subject" value="New Gutter Ninjas Guidance Inquiry" />
+          <input type="hidden" name="form_type" value="Guidance inquiry" />
+          <label class="hidden-field">Leave this field empty <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" /></label>
+
           <label class="check-item">
-            <input type="checkbox" data-score="1" />
-            <span><strong>Water spills over the gutter edge</strong><br />Often means debris is blocking normal flow.</span>
-          </label>
-          <label class="check-item">
-            <input type="checkbox" data-score="1" />
-            <span><strong>Plants or moss are growing in gutters</strong><br />Organic buildup is likely sitting inside the run.</span>
-          </label>
-          <label class="check-item">
-            <input type="checkbox" data-score="1" />
-            <span><strong>Downspouts barely drain during rain</strong><br />This can push water toward the foundation.</span>
-          </label>
-          <label class="check-item">
-            <input type="checkbox" data-score="1" />
-            <span><strong>You see missing, curled, or lifted shingles</strong><br />A small roofline repair may prevent interior leaks.</span>
+            <input type="checkbox" name="warning_signs" value="Water spills over the gutter edge" data-score="1" />
+            <span><strong>Water spills over the gutter edge</strong><br />Often means debris is blocking normal drainage.</span>
           </label>
 
-          <div class="estimate-box" id="riskBox">Risk level: <span>Low</span> — a seasonal inspection is still a smart way to stay ahead of weather-related issues.</div>
-        </div>
+          <label class="check-item">
+            <input type="checkbox" name="warning_signs" value="Plants or moss are growing in gutters" data-score="1" />
+            <span><strong>Plants or moss are growing in gutters</strong><br />Organic buildup is likely sitting inside the gutter run.</span>
+          </label>
+
+          <label class="check-item">
+            <input type="checkbox" name="warning_signs" value="Downspouts barely drain during rain" data-score="1" />
+            <span><strong>Downspouts barely drain during rain</strong><br />This can push water toward areas where you do not want it collecting.</span>
+          </label>
+
+          <label class="check-item">
+            <input type="checkbox" name="warning_signs" value="Missing, curled, or lifted shingles" data-score="1" />
+            <span><strong>You see missing, curled, or lifted shingles</strong><br />A small roofline issue may need attention before it becomes a leak concern.</span>
+          </label>
+
+          <div class="estimate-box" id="riskBox">Guidance level: <span>Low</span> — a seasonal inspection is still a smart way to stay ahead of weather-related issues.</div>
+
+          <div class="guidance-note">
+            Not ready to schedule? Leave your question below and Gutter Ninjas can follow up with guidance.
+          </div>
+
+          <div class="guidance-contact">
+            <label>
+              Name
+              <input name="name" placeholder="Your name" />
+            </label>
+            <label>
+              Phone or email
+              <input name="contact" required placeholder="Phone number or email" />
+            </label>
+          </div>
+
+          <label>
+            Question or comment
+            <textarea rows="4" name="question_or_comment" required placeholder="Example: Water spills over one corner during heavy rain, but I am not sure if it needs cleaning or repair."></textarea>
+          </label>
+
+          <div class="guidance-submit-row">
+            <button class="btn btn-dark" type="submit">Send Guidance Inquiry</button>
+            <small>Connected to Gutter Ninjas through Formspree.</small>
+          </div>
+        </form>
       </div>
     </section>
 
@@ -965,7 +1033,7 @@
         </article>
         <article class="step">
           <h3>Clean or repair</h3>
-          <p>The gutter and downspout system is cleaned and checked together. Debris can be blended into suitable landscape areas, or hauled off for an additional fee.</p>
+          <p>The gutter and downspout system is cleaned together. Debris can be blended into suitable landscape areas when possible. If bagging is requested, it is $20 per filled lawn bag and filled bags are left on-site for the customer’s trash service.</p>
         </article>
         <article class="step">
           <h3>Photo recap</h3>
@@ -1018,7 +1086,7 @@
 
         <label>
           Review
-          <textarea rows="5" name="review" placeholder="Example: The crew communicated clearly, cleaned the gutters, explained the debris haul-off option, and left the work area tidy."></textarea>
+          <textarea rows="5" name="review" placeholder="Example: The crew communicated clearly, cleaned the gutters, explained the debris bagging option, and left the work area tidy."></textarea>
         </label>
 
         <button class="btn btn-dark" type="submit">Submit Review</button>
@@ -1066,11 +1134,11 @@
       });
 
       if (score === 0) {
-        riskBox.innerHTML = 'Risk level: <span>Low</span> — a seasonal inspection is still a smart way to stay ahead of weather-related issues.';
+        riskBox.innerHTML = 'Guidance level: <span>Low</span> — a seasonal inspection is still a smart way to stay ahead of weather-related issues.';
       } else if (score <= 2) {
-        riskBox.innerHTML = 'Risk level: <span>Medium</span> — schedule a cleaning or roofline inspection soon.';
+        riskBox.innerHTML = 'Guidance level: <span>Medium</span> — it may be worth scheduling a cleaning or roofline inspection soon.';
       } else {
-        riskBox.innerHTML = 'Risk level: <span>High</span> — request service before the next heavy rain or storm.';
+        riskBox.innerHTML = 'Guidance level: <span>High</span> — consider requesting service before the next heavy rain or storm.';
       }
     }
 
