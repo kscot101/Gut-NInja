@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gutter Ninjas | Homepage 1 Layout with Homepage 2 Colors</title>
-  <meta name="description" content="Gutter Ninjas provides fast gutter and downspout cleaning, minor roof and shingle repair, inspections, and seasonal maintenance." />
+  <title>Gutter Ninjas | Gutter Cleaning & Minor Shingle Repair in Atlanta, GA</title>
+  <meta name="description" content="Gutter Ninjas provides gutter and downspout cleaning, roofline inspections, minor shingle repair, and homeowner guidance inquiries in Atlanta, Georgia." />
   <style>
     :root {
       --dark: #111827;
@@ -530,6 +530,63 @@
       box-shadow: 0 0 0 4px rgba(34,197,94,.12);
     }
 
+
+    .policy-callout {
+      margin-top: 1rem;
+      background: linear-gradient(135deg, rgba(34,197,94,.12), rgba(251,146,60,.12));
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 1rem;
+    }
+
+    .policy-callout h4 {
+      margin: 0 0 .45rem;
+      font-size: 1.05rem;
+      letter-spacing: -.02em;
+    }
+
+    .policy-callout p {
+      margin: .35rem 0;
+      color: #334155;
+      font-weight: 750;
+    }
+
+    .privacy-note {
+      color: var(--muted);
+      font-size: .86rem;
+      font-weight: 700;
+      line-height: 1.45;
+      margin: .25rem 0 0;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1rem;
+    }
+
+    .why-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 1.1rem;
+      box-shadow: 0 10px 26px rgba(15,23,42,.08);
+    }
+
+    .why-card strong {
+      display: block;
+      margin-bottom: .35rem;
+      color: var(--dark);
+      letter-spacing: -.02em;
+    }
+
+    .why-card p {
+      margin: 0;
+      color: var(--muted);
+      font-weight: 700;
+      font-size: .94rem;
+    }
+
     .checker {
       background: var(--dark);
       color: #fff;
@@ -729,6 +786,10 @@
         grid-template-columns: 1fr;
       }
 
+      .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
       .grid-3,
       .service-grid,
       .process {
@@ -746,7 +807,8 @@
       .grid-3,
       .service-grid,
       .process,
-      .hero-stats {
+      .hero-stats,
+      .why-grid {
         grid-template-columns: 1fr;
       }
 
@@ -756,7 +818,7 @@
   </style>
 </head>
 <body>
-  <div class="topbar">🥷 Protect your home before the next storm — <strong>request a roofline and gutter check</strong></div>
+  <div class="topbar">🥷 Serving Atlanta, Georgia — <strong>request a roofline and gutter check before the next storm</strong></div>
 
   <header>
     <nav class="nav" aria-label="Main navigation">
@@ -768,6 +830,7 @@
       <div class="navlinks">
         <a href="#services">Services</a>
         <a href="#home-risks">Home Risks</a>
+        <a href="#why-choose">Why Choose Us</a>
         <a href="#checker">Guidance Inquiry</a>
         <a href="#reviews">Share Your Experience</a>
         <a href="#process">How It Works</a>
@@ -804,7 +867,7 @@
         <p>Share a few details about your home and we will help identify the right service for your roofline, gutters, or shingles.</p>
 
         <form id="quoteForm" action="https://formspree.io/f/mojzrnzp" method="POST">
-          <input type="hidden" name="_subject" value="New Gutter Ninjas Estimate Request" />
+          <input type="hidden" name="subject" value="New Gutter Ninjas Estimate Request" />
           <input type="hidden" name="form_type" value="Estimate request" />
           <label class="hidden-field">Leave this field empty <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" /></label>
           <div class="field-row">
@@ -836,7 +899,7 @@
             <input type="checkbox" name="debris_bagging_requested" value="Yes, customer requested debris bagging at $20 per filled lawn bag" />
             <div>
               Debris bagging requested
-              <span>Debris is normally blended into suitable natural landscape areas when possible. If bagging is requested, it is $20 per filled lawn bag and the filled bags are left on-site for the customer’s trash service.</span>
+              <span>Standard cleanup blends debris into suitable natural landscape areas when possible. If bagging is requested, it is $20 per filled lawn bag, and filled bags are left on-site for pickup by the customer’s trash service.</span>
             </div>
           </label>
 
@@ -867,6 +930,7 @@
           </label>
 
           <button class="btn btn-dark" type="submit">Request My Estimate</button>
+          <p class="privacy-note">We only use your information to respond to your estimate request.</p>
           <div class="success" id="formSuccess">Thank you. Your request is being sent.</div>
         </form>
       </aside>
@@ -894,6 +958,12 @@
             <li>Standard cleanup: debris is blended into natural landscape areas on the property when suitable</li>
             <li>Debris bagging: $20 per filled lawn bag, left on-site for the customer’s trash service</li>
           </ul>
+          <div class="policy-callout">
+            <h4>Debris Handling</h4>
+            <p><strong>Standard cleanup:</strong> Debris is blended into suitable natural landscape areas on the property when possible.</p>
+            <p><strong>Bagging option:</strong> Debris can be bagged for $20 per filled lawn bag. Filled bags are left on-site for pickup by the customer’s trash service.</p>
+          </div>
+
         </article>
 
         <article class="service">
@@ -960,7 +1030,7 @@
         </div>
 
         <form class="checklist guidance-form" id="guidanceForm" action="https://formspree.io/f/mojzrnzp" method="POST">
-          <input type="hidden" name="_subject" value="New Gutter Ninjas Guidance Inquiry" />
+          <input type="hidden" name="subject" value="New Gutter Ninjas Guidance Inquiry" />
           <input type="hidden" name="form_type" value="Guidance inquiry" />
           <label class="hidden-field">Leave this field empty <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" /></label>
 
@@ -1010,9 +1080,45 @@
             <button class="btn btn-dark" type="submit">Send Guidance Inquiry</button>
             <small>Connected to Gutter Ninjas through Formspree.</small>
           </div>
+          <p class="privacy-note">We only use your information to respond to your question or guidance inquiry.</p>
         </form>
       </div>
     </section>
+
+
+    <section id="why-choose">
+      <div class="section-heading">
+        <div>
+          <h2>Why Atlanta homeowners choose Gutter Ninjas.</h2>
+          <p>Practical roofline maintenance, clear expectations, and straightforward communication from first contact to final cleanup.</p>
+        </div>
+        <a class="btn btn-dark" href="#quote">Request an Estimate</a>
+      </div>
+
+      <div class="why-grid">
+        <article class="why-card">
+          <strong>Clear communication</strong>
+          <p>Customers know what service is being requested before work begins.</p>
+        </article>
+        <article class="why-card">
+          <strong>Practical maintenance</strong>
+          <p>Focused gutter, downspout, and minor shingle services for common Atlanta home needs.</p>
+        </article>
+        <article class="why-card">
+          <strong>Transparent debris policy</strong>
+          <p>Standard landscape blending is explained up front, with bagging available at $20 per filled lawn bag.</p>
+        </article>
+        <article class="why-card">
+          <strong>Helpful guidance</strong>
+          <p>Homeowners can ask questions before deciding whether an on-site service visit makes sense.</p>
+        </article>
+        <article class="why-card">
+          <strong>Respectful cleanup</strong>
+          <p>The work area is treated with care and debris expectations are discussed clearly.</p>
+        </article>
+      </div>
+    </section>
+
 
     <section id="process">
       <div class="section-heading">
@@ -1054,7 +1160,7 @@
       </div>
 
       <form class="review-form-card" id="reviewForm" action="https://formspree.io/f/mojzrnzp" method="POST">
-        <input type="hidden" name="_subject" value="New Gutter Ninjas Review" />
+        <input type="hidden" name="subject" value="New Gutter Ninjas Review" />
         <input type="hidden" name="form_type" value="Customer review" />
         <label class="hidden-field">Leave this field empty <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" /></label>
 
@@ -1090,6 +1196,7 @@
         </label>
 
         <button class="btn btn-dark" type="submit">Submit Review</button>
+        <p class="privacy-note">We only use your information to receive and follow up on your review if needed.</p>
       </form>
     </section>
 
@@ -1110,7 +1217,7 @@
         Gutter &amp; downspout cleaning • Minor shingle repair
       </div>
       <div>
-        Replace with service area, email address, real phone number, and any required local business information.
+        Serving Atlanta, Georgia. Replace with the real phone number, work email, business hours, and any required local business information.
       </div>
     </div>
   </footer>
