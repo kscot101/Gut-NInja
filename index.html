@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cox Gutters | Gutter Cleaning & Minor Shingle Repair in Atlanta, GA</title>
   <meta name="description" content="Cox Gutters provides gutter and downspout cleaning, minor shingle repair, debris bagging, and homeowner guidance inquiries in Atlanta, Georgia." />
-  <link rel="preload" as="image" href="images/cox-gutters-hero-roof-rooster.jpg" />
   <style>
     :root {
       --green: #104b2d;
@@ -29,15 +28,10 @@
 
     html {
       scroll-behavior: smooth;
-      width: 100%;
-      min-height: 100%;
     }
 
     body {
       margin: 0;
-      padding: 0;
-      width: 100%;
-      min-height: 100%;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--ink);
       background: #fff;
@@ -55,10 +49,8 @@
     }
 
     .wrap {
-      width: 100%;
-      max-width: 1280px;
+      width: min(1180px, calc(100% - 2rem));
       margin: 0 auto;
-      padding: 0 2rem;
     }
 
     header {
@@ -149,39 +141,10 @@
 
     .nav-links a {
       white-space: nowrap;
-      position: relative;
-      padding: .35rem 0;
-    }
-
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -3px;
-      width: 0;
-      height: 2px;
-      background: var(--orange);
-      transition: width .25s ease;
     }
 
     .nav-links a:hover {
       color: var(--orange);
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-    .menu-toggle {
-      display: none;
-      border: 0;
-      background: var(--green);
-      color: #fff;
-      border-radius: 6px;
-      padding: .72rem .85rem;
-      font-size: 1.2rem;
-      line-height: 1;
-      cursor: pointer;
     }
 
     .btn {
@@ -202,15 +165,6 @@
 
     .btn:hover {
       transform: translateY(-2px);
-    }
-
-    .btn:focus-visible,
-    .nav-links a:focus-visible,
-    input:focus-visible,
-    select:focus-visible,
-    textarea:focus-visible {
-      outline: 3px solid rgba(228,85,18,.35);
-      outline-offset: 3px;
     }
 
     .btn-orange {
@@ -238,10 +192,10 @@
     .hero {
       position: relative;
       overflow: hidden;
-      min-height: 100vh;
-      width: 100%;
+      min-height: 650px;
       background:
         radial-gradient(circle at 26% 14%, rgba(255,245,160,.95) 0 44px, rgba(255,232,100,.34) 46px 94px, rgba(255,255,255,0) 170px),
+        radial-gradient(circle at 82% 22%, rgba(255,255,255,.42), transparent 15rem),
         linear-gradient(180deg, #a8e4ff 0%, #d5f4ff 50%, #e9f8db 100%);
     }
 
@@ -256,25 +210,6 @@
       pointer-events: none;
     }
 
-    .hero-art {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: min(60vw, 960px);
-      height: 100%;
-      background: url("images/cox-gutters-hero-roof-rooster.jpg") center right / cover no-repeat;
-      z-index: 2;
-      border-bottom-left-radius: 18px;
-      box-shadow: -18px 22px 60px rgba(16,32,51,.08);
-    }
-
-    .hero-art::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(90deg, rgba(168,228,255,.25), rgba(255,255,255,0) 40%);
-      pointer-events: none;
-    }
 
     .tree-line {
       position: absolute;
@@ -344,13 +279,13 @@
       grid-template-columns: minmax(0, 1fr) 410px;
       gap: 2.25rem;
       align-items: center;
-      min-height: calc(100vh - 82px);
+      min-height: 650px;
       padding: 3.25rem 0 4.25rem;
     }
 
     .hero-copy {
       max-width: 630px;
-      padding-top: 7rem;
+      padding-top: 5rem;
     }
 
     h1 {
@@ -385,17 +320,16 @@
     }
 
     .estimate-card {
-      align-self: end;
+      align-self: center;
       justify-self: end;
       width: min(100%, 410px);
-      margin-top: 6rem;
+      margin-top: 2rem;
       margin-bottom: .75rem;
       background: #fff;
       border: 1px solid rgba(16,32,51,.16);
       border-radius: 8px;
       overflow: hidden;
       box-shadow: 0 24px 55px rgba(16,32,51,.24);
-      transition: transform .25s ease, box-shadow .25s ease;
     }
 
     .estimate-head {
@@ -544,14 +478,6 @@
       padding: 2rem 1.45rem;
       text-align: center;
       box-shadow: 0 10px 28px rgba(16,32,51,.06);
-      transition: transform .25s ease, box-shadow .25s ease;
-    }
-
-    .service-card:hover,
-    .action-card:hover,
-    .estimate-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 25px 50px rgba(16,32,51,.15);
     }
 
     .icon-circle {
@@ -682,9 +608,41 @@
       border-radius: 8px;
       overflow: hidden;
       background:
-        linear-gradient(90deg, rgba(16,75,45,.78), rgba(16,75,45,.22)),
-        url("images/cox-gutters-roofline-card.jpg") center / cover no-repeat;
+        radial-gradient(circle at 78% 18%, rgba(255,245,160,.7) 0 42px, transparent 96px),
+        radial-gradient(circle at 18% 86%, #4d9a4e 0 72px, transparent 73px),
+        radial-gradient(circle at 46% 90%, #2f7f3f 0 88px, transparent 89px),
+        linear-gradient(135deg, #bfe9ff 0%, #eaf7d8 52%, #f4f6ef 100%);
       box-shadow: inset 0 0 0 1px rgba(255,255,255,.45);
+    }
+
+    .why-image::before {
+      content: "";
+      position: absolute;
+      right: -35px;
+      top: 70px;
+      width: 340px;
+      height: 155px;
+      background:
+        repeating-linear-gradient(0deg, rgba(255,255,255,.16) 0 2px, transparent 2px 34px),
+        repeating-linear-gradient(93deg, rgba(26,23,20,.3) 0 3px, transparent 3px 70px),
+        linear-gradient(135deg, #8b6e4f, #3a312c 62%, #241f1d);
+      transform: skewY(-10deg);
+      border-bottom: 10px solid #f7f2e4;
+    }
+
+    .why-image::after {
+      content: "";
+      position: absolute;
+      left: 125px;
+      bottom: 52px;
+      width: 230px;
+      height: 120px;
+      opacity: .36;
+      background:
+        linear-gradient(180deg, #638da8, #3d657d) 10px 52px / 26px 68px no-repeat,
+        linear-gradient(180deg, #638da8, #3d657d) 50px 16px / 34px 104px no-repeat,
+        linear-gradient(180deg, #638da8, #3d657d) 102px 34px / 30px 86px no-repeat,
+        linear-gradient(180deg, #638da8, #3d657d) 150px 0 / 38px 120px no-repeat;
     }
 
     .why-badge {
@@ -727,7 +685,6 @@
       border-radius: 10px;
       padding: 2rem;
       box-shadow: 0 10px 28px rgba(16,32,51,.07);
-      transition: transform .25s ease, box-shadow .25s ease;
     }
 
     .action-card h2 {
@@ -794,24 +751,6 @@
       margin: .8rem 0 1.2rem;
     }
 
-    .floating-call {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      z-index: 1000;
-      background: var(--orange);
-      color: #fff;
-      border-radius: 999px;
-      padding: .9rem 1.15rem;
-      font-weight: 950;
-      box-shadow: 0 12px 30px rgba(0,0,0,.25);
-    }
-
-    .floating-call:hover {
-      background: var(--orange-dark);
-      transform: translateY(-2px);
-    }
-
     footer {
       background: linear-gradient(135deg, var(--green), #092c1c);
       color: #e9f3e7;
@@ -867,37 +806,8 @@
     }
 
     @media (max-width: 1100px) {
-      .menu-toggle {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .nav {
-        position: relative;
-      }
-
       .nav-links {
         display: none;
-        position: absolute;
-        left: 2rem;
-        right: 2rem;
-        top: calc(100% + 1px);
-        background: #fff;
-        border: 1px solid var(--line);
-        border-radius: 10px;
-        padding: 1rem;
-        box-shadow: var(--shadow);
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .nav-links.open {
-        display: flex;
-      }
-
-      .nav-links a {
-        padding: .75rem;
       }
 
       .hero-content {
@@ -914,10 +824,6 @@
         margin-top: 1rem;
       }
 
-      .hero-art {
-        width: 100%;
-        opacity: .78;
-      }
 
       .services-grid,
       .damage-grid,
@@ -956,12 +862,6 @@
         padding-top: 2.5rem;
       }
 
-      .hero-art {
-        width: 135%;
-        height: 380px;
-        right: -50%;
-        opacity: .92;
-      }
 
       .tree-line {
         height: 155px;
@@ -1005,9 +905,7 @@
         </span>
       </a>
 
-      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">☰</button>
-
-      <nav class="nav-links" id="mainNav" aria-label="Main navigation">
+      <nav class="nav-links" aria-label="Main navigation">
         <a href="#services">Services</a>
         <a href="#home-risks">Home Risks</a>
         <a href="#why-choose">Why Choose Us</a>
@@ -1022,7 +920,6 @@
 
   <main id="top">
     <section class="hero">
-      <div class="hero-art" aria-hidden="true"></div>
 
       <div class="skyline" aria-hidden="true">
         <span class="building"></span>
@@ -1043,8 +940,7 @@
           <div class="accent-line"></div>
           <div class="hero-actions">
             <a class="btn btn-orange" href="#quote">Request My Estimate</a>
-            <a class="btn btn-outline" href="tel:4045550123">Call Now</a>
-            <a class="btn btn-outline" href="mailto:coxguttercleaning@gmail.com">Email Us</a>
+            <a class="btn btn-outline" href="#checker">Ask a Question</a>
           </div>
         </div>
 
@@ -1315,7 +1211,7 @@
 
       <div>
         <h4>Contact Us</h4>
-        <p>📞 <a href="tel:4045550123">(404) 555-0123</a></p>
+        <p>📞 (404) 555-0123</p>
         <p>✉️ <a href="mailto:coxguttercleaning@gmail.com">coxguttercleaning@gmail.com</a></p>
         <p>📍 Atlanta, Georgia and surrounding areas</p>
       </div>
@@ -1343,35 +1239,5 @@
       <span>Privacy Policy &nbsp;&nbsp; Terms of Service</span>
     </div>
   </footer>
-  <a href="tel:4045550123" class="floating-call">📞 Call Now</a>
-
-  <script>
-    const menuToggle = document.querySelector(".menu-toggle");
-    const mainNav = document.querySelector("#mainNav");
-
-    menuToggle.addEventListener("click", () => {
-      const isOpen = mainNav.classList.toggle("open");
-      menuToggle.setAttribute("aria-expanded", String(isOpen));
-      menuToggle.textContent = isOpen ? "×" : "☰";
-    });
-
-    mainNav.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        mainNav.classList.remove("open");
-        menuToggle.setAttribute("aria-expanded", "false");
-        menuToggle.textContent = "☰";
-      });
-    });
-
-    document.querySelectorAll("form").forEach(form => {
-      form.addEventListener("submit", () => {
-        const button = form.querySelector("button[type='submit']");
-        if (!button) return;
-        button.disabled = true;
-        button.dataset.originalText = button.textContent;
-        button.textContent = "Submitting...";
-      });
-    });
-  </script>
 </body>
 </html>
