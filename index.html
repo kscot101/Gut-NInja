@@ -5,60 +5,429 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cox Gutters | Gutter Cleaning & Minor Shingle Repair in Atlanta, GA</title>
   <meta name="description" content="Cox Gutters provides gutter and downspout cleaning, minor shingle repair, debris bagging, and homeowner guidance inquiries in Atlanta, Georgia." />
-  <link rel="preload" as="image" href="images/roof-rooster-illustration.jpg" />
+  <link rel="preload" as="image" href="images/cox-gutters-homepage-exact-mockup.png" />
   <style>
     :root {
-      --green:#174f32; --green2:#0d3421; --green3:#2f6d46; --orange:#df520f; --orange2:#bd4208;
-      --ink:#102033; --muted:#596575; --line:#e4e8df; --soft:#f7f9f4; --gold:#f5b01f;
-      --shadow:0 18px 45px rgba(16,32,51,.13); --radius:12px;
+      --design-width: 941;
+      --design-height: 1672;
+      --green: #114b2d;
+      --orange: #e65412;
+      --ink: #102033;
     }
-    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:#fff;line-height:1.55} a{color:inherit;text-decoration:none} img{display:block;max-width:100%}
-    .wrap{width:min(1180px,calc(100% - 2rem));margin:0 auto}
-    header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-    .nav{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:1rem}
-    .brand{display:flex;align-items:center;gap:.75rem;min-width:230px}
-    .brand-mark{width:56px;height:42px;border-radius:50% 50% 12px 12px;background:#eef6eb;border:1px solid #d5e7cf;position:relative;overflow:hidden;flex:0 0 auto}
-    .brand-mark:before{content:"";position:absolute;width:48px;height:26px;left:8px;top:8px;border-radius:50% 50% 0 0;border-top:9px solid var(--green);transform:rotate(8deg)}
-    .brand-mark:after{content:"";position:absolute;width:18px;height:28px;right:5px;bottom:2px;border-radius:10px;background:var(--green3);transform:rotate(-28deg)}
-    .brand-text strong{display:block;font-size:1.75rem;line-height:1;letter-spacing:-.06em} .brand-text span{display:block;font-size:.82rem;font-weight:800;color:var(--muted);margin-top:.1rem}
-    .nav-links{display:flex;align-items:center;gap:1.25rem;font-size:.91rem;font-weight:850;color:#1b2737} .nav-links a:hover{color:var(--orange)}
-    .btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:4px;padding:.9rem 1.2rem;font-weight:950;text-transform:uppercase;letter-spacing:.01em;font-size:.86rem;cursor:pointer;transition:.18s ease;white-space:nowrap} .btn:hover{transform:translateY(-2px)}
-    .btn-orange{background:var(--orange);color:#fff;box-shadow:0 12px 24px rgba(223,82,15,.24)} .btn-orange:hover{background:var(--orange2)} .btn-outline{background:rgba(255,255,255,.84);border:2px solid var(--ink);color:var(--ink)} .btn-green{background:var(--green);color:#fff}
 
-    .hero{position:relative;min-height:650px;overflow:hidden;background:radial-gradient(circle at 28% 8%,rgba(255,244,151,.98) 0 3rem,rgba(255,234,116,.45) 3.1rem 5rem,transparent 8rem),linear-gradient(180deg,#86d4ff 0%,#ccefff 46%,#eaf7d8 100%)}
-    .hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.68) 0%,rgba(255,255,255,.36) 38%,rgba(255,255,255,0) 68%);z-index:1}
-    .hero:after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:235px;background:radial-gradient(circle at 8% 82%,#2e7f43 0 4rem,transparent 4.1rem),radial-gradient(circle at 22% 86%,#3e904a 0 5.5rem,transparent 5.6rem),radial-gradient(circle at 45% 88%,#2d7c40 0 5rem,transparent 5.1rem),radial-gradient(circle at 65% 88%,#4e9a50 0 5rem,transparent 5.1rem),radial-gradient(circle at 84% 88%,#2c743c 0 6rem,transparent 6.1rem),linear-gradient(180deg,transparent 0%,#2d7a3d 52%,#1d5c32 100%);opacity:.92;z-index:1}
-    .roof-art{position:absolute;right:0;top:0;width:min(58vw,980px);height:560px;z-index:2;background:url("images/roof-rooster-illustration.jpg") center top/cover no-repeat;pointer-events:none}
-    .skyline{position:absolute;left:34%;bottom:175px;transform:translateX(-50%);width:430px;height:185px;z-index:1;opacity:.38} .building{position:absolute;bottom:0;width:42px;background:linear-gradient(180deg,#6287a4,#2f5d7a);border-radius:4px 4px 0 0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.28)}
-    .building:nth-child(1){left:0;height:70px}.building:nth-child(2){left:52px;height:105px}.building:nth-child(3){left:108px;height:150px;width:48px}.building:nth-child(4){left:172px;height:122px}.building:nth-child(5){left:226px;height:178px;width:54px}.building:nth-child(6){left:294px;height:118px}.building:nth-child(7){left:348px;height:88px}.building:nth-child(3):before,.building:nth-child(5):before{content:"";position:absolute;left:50%;top:-36px;transform:translateX(-50%);border-left:20px solid transparent;border-right:20px solid transparent;border-bottom:38px solid #6287a4}
-    .hero-content{position:relative;z-index:4;display:grid;grid-template-columns:1.05fr .8fr;gap:2rem;align-items:center;min-height:650px;padding:3rem 0 4.1rem} .hero-copy{max-width:620px}
-    h1{margin:0;font-size:clamp(3rem,6.8vw,5.85rem);line-height:.96;letter-spacing:-.075em;color:var(--ink)} .hero-copy p{margin:1.15rem 0 0;color:#172a3d;font-size:clamp(1.08rem,1.7vw,1.35rem);font-weight:850;max-width:440px} .accent-line{width:46px;height:4px;background:var(--orange);margin:1rem 0 1.15rem;border-radius:99px} .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.35rem}
-    .estimate-card{align-self:end;justify-self:end;width:min(100%,410px);background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 24px 55px rgba(16,32,51,.24);border:1px solid rgba(16,32,51,.12);margin-top:3.5rem} .estimate-head{background:linear-gradient(135deg,var(--green),var(--green2));color:#fff;text-align:center;padding:1.18rem 1rem} .estimate-head h2{margin:0;font-size:1.65rem;letter-spacing:-.04em} .estimate-head p{margin:.2rem 0 0;color:#d9eadb;font-weight:750}
-    form{display:grid;gap:.75rem} .estimate-card form{padding:1.15rem} .field-row{display:grid;grid-template-columns:1fr 1fr;gap:.7rem} label{display:grid;gap:.35rem;font-weight:850;font-size:.88rem;color:var(--ink)} input,select,textarea{width:100%;border:1px solid #d9ded5;border-radius:4px;padding:.8rem .82rem;font:inherit;outline:none;background:#fff} textarea{resize:vertical} input:focus,select:focus,textarea:focus{border-color:var(--green);box-shadow:0 0 0 4px rgba(23,79,50,.12)}
-    .checkbox-field{display:flex;align-items:flex-start;gap:.75rem;background:#f8faf6;border:1px solid #e0e6dc;border-radius:6px;padding:.82rem;color:#334155;font-weight:800} .checkbox-field input{width:auto;margin-top:.25rem;accent-color:var(--green)} .checkbox-field span{display:block;color:var(--muted);font-size:.84rem;margin-top:.2rem} .privacy-note{color:var(--muted);font-size:.78rem;font-weight:750;margin:0;text-align:center} .hidden-field{display:none!important}
-    section{padding:3.5rem 0} .section-title{text-align:center;margin-bottom:1.8rem} .section-title h2{margin:0;font-size:clamp(2rem,3vw,2.65rem);letter-spacing:-.055em;line-height:1} .title-line{width:48px;height:3px;background:var(--orange);margin:.75rem auto 0;border-radius:99px}
-    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem} .service-card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:2rem 1.45rem;text-align:center;box-shadow:0 10px 28px rgba(16,32,51,.06)} .icon-circle{width:74px;height:74px;border-radius:50%;background:#eaf3e6;color:var(--green);display:grid;place-items:center;margin:0 auto 1.1rem;font-size:2rem} .service-card h3{margin:0;font-size:1.22rem;letter-spacing:-.03em} .service-card p{margin:.7rem auto 0;color:#313d4a;font-weight:650;max-width:270px}
-    .damage-panel{background:#fbfbf7;border-radius:10px;box-shadow:0 10px 30px rgba(16,32,51,.06);border:1px solid #edf0e9;padding:2rem} .damage-panel h2{text-align:center;margin:0 0 2rem;font-size:clamp(1.8rem,3vw,2.45rem);letter-spacing:-.055em} .damage-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem} .damage-item{display:grid;grid-template-columns:auto 1fr;gap:1rem;padding-right:1rem;border-right:1px solid #dde3d7} .damage-item:last-child{border-right:0} .damage-icon{color:var(--green);font-size:2.1rem;line-height:1} .damage-item h3{margin:0 0 .35rem;font-size:1rem} .damage-item p{margin:0;color:#3d4652;font-size:.91rem;font-weight:650}
-    .why-panel{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;background:linear-gradient(135deg,#eef6e8,#f7faf2);border:1px solid #dcebd6;border-radius:10px;padding:2rem 3rem} .why-panel h2{margin:0 0 .75rem;font-size:clamp(1.8rem,3vw,2.35rem);line-height:1.05;letter-spacing:-.055em} .why-panel p{color:#2f3a47;font-weight:650} .check-list{margin:1rem 0 0;padding:0;list-style:none;display:grid;gap:.55rem;color:#233142;font-weight:750} .check-list li:before{content:"✓";display:inline-grid;place-items:center;width:18px;height:18px;border-radius:50%;background:var(--green);color:#fff;font-size:.75rem;margin-right:.5rem} .why-image{position:relative;min-height:290px;border-radius:8px;overflow:hidden;background:linear-gradient(90deg,rgba(23,79,50,.84),rgba(23,79,50,.35)),url("images/atlanta-roofline-card.jpg") center/cover no-repeat} .why-badge{position:absolute;left:2rem;top:2rem;color:#fff;font-size:1.45rem;font-weight:950;line-height:1.15;max-width:260px} .why-badge span{display:grid;place-items:center;width:58px;height:58px;border-radius:50%;border:3px solid rgba(255,255,255,.8);margin-bottom:.8rem;font-size:1.8rem}
-    .cards-row{display:grid;grid-template-columns:1fr 1fr;gap:2rem} .action-card{position:relative;min-height:235px;overflow:hidden;background:#fff;border:1px solid var(--line);border-radius:10px;padding:2rem;box-shadow:0 10px 28px rgba(16,32,51,.07)} .action-card h2{margin:0 0 .8rem;font-size:1.8rem;letter-spacing:-.05em} .action-card p{color:#384452;font-weight:650;max-width:340px} .stars{color:var(--gold);letter-spacing:.08em;font-size:1.8rem;margin:.8rem 0 1.2rem} .chat-art{position:absolute;right:2rem;bottom:2rem;width:155px;height:110px} .chat-art:before,.chat-art:after{content:"";position:absolute;border-radius:16px} .chat-art:before{width:120px;height:84px;top:0;left:0;background:#d8cfc3} .chat-art:after{width:120px;height:84px;right:0;bottom:0;background:var(--green3);clip-path:polygon(0 0,100% 0,100% 78%,76% 78%,83% 100%,58% 78%,0 78%)}
-    footer{background:linear-gradient(135deg,var(--green),#0a2d1d);color:#e9f3e7;padding:3rem 0 1rem} .footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1.1fr 1fr;gap:2.2rem;border-bottom:1px solid rgba(255,255,255,.2);padding-bottom:2rem} footer h3,footer h4{color:#fff;margin:0 0 .75rem} .footer-logo{display:flex;align-items:center;gap:.7rem;margin-bottom:.7rem} .footer-logo .brand-mark{background:rgba(255,255,255,.13);border-color:rgba(255,255,255,.24)} footer p,footer li,footer a{color:#e2efe0;font-weight:650;font-size:.95rem} footer ul{margin:0;padding-left:1.1rem} .footer-bottom{display:flex;justify-content:space-between;gap:1rem;padding-top:1rem;color:#cfe4cb;font-size:.9rem}
-    @media (max-width:1050px){.nav-links{display:none}.hero-content{grid-template-columns:1fr}.estimate-card{justify-self:start;margin-top:1rem}.roof-art{width:100%;opacity:.72}.services-grid,.damage-grid,.footer-grid{grid-template-columns:repeat(2,1fr)}.damage-item{border-right:0}.why-panel{grid-template-columns:1fr}}
-    @media (max-width:700px){.brand-text strong{font-size:1.35rem}.nav{min-height:72px}.hero{min-height:auto}.hero-content{min-height:760px;padding-top:2.5rem}.hero:after{height:150px}.skyline{left:50%;width:320px;bottom:120px}.roof-art{width:125%;height:360px;right:-45%;opacity:.88}.field-row,.services-grid,.damage-grid,.why-panel,.cards-row,.footer-grid{grid-template-columns:1fr}.why-panel,.damage-panel{padding:1.35rem}.footer-bottom{flex-direction:column}}
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      background: #ffffff;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+    }
+
+    .page-shell {
+      width: 100%;
+      overflow-x: hidden;
+      background: #fff;
+    }
+
+    .mockup-stage {
+      position: relative;
+      width: 100%;
+      max-width: 941px;
+      margin: 0 auto;
+      line-height: 0;
+      background: #fff;
+    }
+
+    .mockup-stage img {
+      width: 100%;
+      height: auto;
+      display: block;
+      user-select: none;
+    }
+
+    .hotspot {
+      position: absolute;
+      display: block;
+      z-index: 5;
+      border-radius: 8px;
+      text-indent: -9999px;
+      overflow: hidden;
+      background: rgba(255,255,255,0);
+    }
+
+    .hotspot:focus-visible {
+      outline: 4px solid rgba(230,84,18,.75);
+      outline-offset: 3px;
+    }
+
+    /*
+      All overlay positions are percentages of the mockup image.
+      This keeps them aligned as the image scales.
+    */
+
+    .nav-services { left: 26.8%; top: 1.2%; width: 5.2%; height: 2.6%; }
+    .nav-home-risks { left: 33.0%; top: 1.2%; width: 5.4%; height: 2.6%; }
+    .nav-why { left: 39.5%; top: 1.2%; width: 6.8%; height: 2.6%; }
+    .nav-guidance { left: 47.2%; top: 1.2%; width: 7.7%; height: 2.6%; }
+    .nav-review { left: 56.2%; top: 1.2%; width: 8.5%; height: 2.6%; }
+    .nav-contact { left: 66.2%; top: 1.2%; width: 5.2%; height: 2.6%; }
+    .nav-estimate { left: 73.6%; top: .7%; width: 15.4%; height: 3.5%; }
+
+    .hero-estimate { left: 4.1%; top: 21.5%; width: 19.0%; height: 3.7%; }
+    .hero-question { left: 24.7%; top: 21.5%; width: 13.0%; height: 3.7%; }
+
+    .guidance-card { left: 8.0%; top: 79.4%; width: 12.7%; height: 2.8%; }
+    .review-card { left: 53.4%; top: 79.4%; width: 12.5%; height: 2.8%; }
+
+    .footer-email { left: 34.6%; top: 91.5%; width: 16.5%; height: 2.1%; }
+
+    .form-overlay {
+      position: absolute;
+      z-index: 10;
+      left: 65.9%;
+      top: 20.5%;
+      width: 28.3%;
+      height: 16.0%;
+      pointer-events: none;
+    }
+
+    .estimate-form {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(6, 1fr);
+      gap: 5.5%;
+      pointer-events: auto;
+      opacity: 0;
+    }
+
+    .estimate-form input,
+    .estimate-form select,
+    .estimate-form textarea,
+    .estimate-form button {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      padding: 0;
+      font: inherit;
+    }
+
+    .estimate-form .full {
+      grid-column: 1 / 3;
+    }
+
+    .estimate-form .notes {
+      grid-column: 1 / 3;
+    }
+
+    .estimate-form button {
+      cursor: pointer;
+    }
+
+    .visually-hidden {
+      position: fixed;
+      left: -10000px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      background: rgba(16,32,51,.64);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .modal-backdrop:target {
+      display: flex;
+    }
+
+    .modal {
+      width: min(620px, 100%);
+      max-height: 90vh;
+      overflow: auto;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 28px 80px rgba(0,0,0,.32);
+      padding: 1.25rem;
+    }
+
+    .modal h2 {
+      margin: 0 0 .4rem;
+      font-size: 1.8rem;
+      line-height: 1.1;
+    }
+
+    .modal p {
+      margin: 0 0 1rem;
+      color: #526071;
+      line-height: 1.5;
+    }
+
+    .modal form {
+      display: grid;
+      gap: .75rem;
+    }
+
+    .modal label {
+      display: grid;
+      gap: .35rem;
+      font-weight: 800;
+    }
+
+    .modal input,
+    .modal select,
+    .modal textarea {
+      width: 100%;
+      border: 1px solid #d9dfd5;
+      border-radius: 8px;
+      padding: .85rem;
+      font: inherit;
+    }
+
+    .modal button,
+    .modal .button {
+      border: 0;
+      border-radius: 8px;
+      padding: .9rem 1.1rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      background: var(--orange);
+      color: #fff;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .modal .close {
+      display: inline-flex;
+      margin-top: .75rem;
+      background: #eef2ed;
+      color: var(--ink);
+    }
+
+    .two {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .75rem;
+    }
+
+    .checkbox {
+      display: flex !important;
+      align-items: flex-start;
+      gap: .65rem;
+      background: #f8faf6;
+      border: 1px solid #e0e7dd;
+      border-radius: 8px;
+      padding: .85rem;
+    }
+
+    .checkbox input {
+      width: auto;
+      margin-top: .3rem;
+    }
+
+    .privacy {
+      color: #526071;
+      font-size: .85rem;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    @media (max-width: 700px) {
+      .mockup-stage {
+        width: 1000px;
+        max-width: none;
+        transform: scale(calc(100vw / 1000));
+        transform-origin: top left;
+        margin-bottom: calc((1672px * (100vw / 1000)) - 1672px);
+      }
+
+      .page-shell {
+        overflow-x: auto;
+      }
+
+      .form-overlay {
+        display: none;
+      }
+
+      .two {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
-<body>
-  <header><div class="wrap nav"><a class="brand" href="#top"><span class="brand-mark"></span><span class="brand-text"><strong>Cox Gutters</strong><span>Clean gutters. Strong homes.</span></span></a><nav class="nav-links"><a href="#services">Services</a><a href="#home-risks">Home Risks</a><a href="#why-choose">Why Choose Us</a><a href="#checker">Guidance Inquiry</a><a href="#reviews">Share Your Experience</a><a href="mailto:coxguttercleaning@gmail.com">Contact</a></nav><a class="btn btn-orange" href="#quote">Request My Estimate</a></div></header>
-  <main id="top">
-    <section class="hero"><div class="roof-art"></div><div class="skyline"><span class="building"></span><span class="building"></span><span class="building"></span><span class="building"></span><span class="building"></span><span class="building"></span><span class="building"></span></div><div class="wrap hero-content"><div class="hero-copy"><h1>Clean Gutters. Strong Homes.</h1><p>Proudly serving Atlanta, Georgia and surrounding areas.</p><div class="accent-line"></div><div class="hero-actions"><a class="btn btn-orange" href="#quote">Request My Estimate</a><a class="btn btn-outline" href="#checker">Ask a Question</a></div></div>
-      <aside class="estimate-card" id="quote"><div class="estimate-head"><h2>Get Your Free Estimate</h2><p>Fast. Friendly. No obligation.</p></div><form id="quoteForm" action="https://formspree.io/f/mojzrnzp" method="POST"><input type="hidden" name="subject" value="New Cox Gutters Estimate Request" /><input type="hidden" name="form_type" value="Estimate request" /><label class="hidden-field">Leave empty <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" /></label><div class="field-row"><label>Full Name<input name="name" required placeholder="Full Name" /></label><label>Phone Number<input name="phone" required placeholder="Phone Number" /></label></div><label>Email Address<input type="email" name="email" placeholder="Email Address" /></label><label>Service Address<input name="address" placeholder="Service Address" /></label><div class="field-row"><label>City<input name="city" placeholder="City" /></label><label>Zip Code<input name="zip" placeholder="Zip Code" /></label></div><label>Service Needed<select name="service" required><option value="">Select a service</option><option>Gutter &amp; downspout cleaning</option><option>Minor shingle repair</option><option>Guidance / not sure</option></select></label><label class="checkbox-field"><input type="checkbox" name="debris_bagging_requested" value="Yes, customer requested debris bagging at $20 per filled lawn bag" /><div>Debris bagging requested<span>Bagging is $20 per filled lawn bag. Filled bags are left on-site for customer trash pickup.</span></div></label><label>Notes<textarea name="notes" rows="3" placeholder="Tell us what you are seeing."></textarea></label><button class="btn btn-orange" type="submit">Request My Estimate</button><p class="privacy-note">🔒 Your information is used only to respond to your estimate request.</p></form></aside>
-    </div></section>
 
-    <section id="services"><div class="wrap"><div class="section-title"><h2>Our Services</h2><div class="title-line"></div></div><div class="services-grid"><article class="service-card"><div class="icon-circle">🍃</div><h3>Gutter &amp; Downspout Cleaning</h3><p>We remove leaves, pine needles, and debris to help keep your gutters clear.</p></article><article class="service-card"><div class="icon-circle">🏠</div><h3>Minor Shingle Repair</h3><p>We replace a few damaged or lifted shingles to help protect your roof and home.</p></article><article class="service-card"><div class="icon-circle">🛍️</div><h3>Debris Bagging</h3><p>$20 per filled lawn bag. Bags are left on-site for customer trash pickup.</p></article></div></div></section>
-    <section id="home-risks"><div class="wrap"><div class="damage-panel"><h2>Protect Your Home from Costly Damage</h2><div class="damage-grid"><article class="damage-item"><div class="damage-icon">💧</div><div><h3>Water Damage</h3><p>Clogged gutters can cause overflow, leading to roof leaks, wall damage, and foundation issues.</p></div></article><article class="damage-item"><div class="damage-icon">🛡️</div><div><h3>Roof Damage</h3><p>Trapped moisture and debris can rot fascia, damage shingles, and shorten the life of your roof.</p></div></article><article class="damage-item"><div class="damage-icon">🏡</div><div><h3>Pests &amp; Mold</h3><p>Standing water attracts pests and encourages mold, mildew, and algae growth.</p></div></article><article class="damage-item"><div class="damage-icon">📈</div><div><h3>Costly Repairs</h3><p>Small issues left unchecked can lead to expensive repairs. Preventive care saves money.</p></div></article></div></div></div></section>
-    <section id="why-choose"><div class="wrap"><div class="why-panel"><div><h2>Why Atlanta Homeowners Choose Cox Gutters</h2><p>We combine friendly service, honest communication, and attention to detail to keep your home protected year-round.</p><ul class="check-list"><li>Local, reliable, and family-focused</li><li>Clear communication and upfront expectations</li><li>Respectful of your home and property</li><li>Focused gutter, downspout, and minor shingle services</li><li>Debris bagging available at $20 per filled lawn bag</li></ul></div><div class="why-image"><div class="why-badge"><span>✓</span>Quality Service.<br>Honest Work.<br>Peace of Mind.</div></div></div></div></section>
-    <section id="checker"><div class="wrap cards-row"><article class="action-card"><h2>Guidance Inquiry</h2><p>Not sure what your home needs? We are here to help. Tell us about your concerns and we will offer guidance.</p><a class="btn btn-outline" href="#guidanceForm">Submit an Inquiry</a></article><form class="action-card" id="guidanceForm" action="https://formspree.io/f/mojzrnzp" method="POST"><input type="hidden" name="subject" value="New Cox Gutters Guidance Inquiry" /><input type="hidden" name="form_type" value="Guidance inquiry" /><label class="hidden-field">Leave empty <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" /></label><h2>Ask a Question</h2><p>Have a concern but not ready to schedule? Send a question here.</p><div class="field-row"><label>Name<input name="name" placeholder="Your name" /></label><label>Phone or Email<input name="contact" required placeholder="Phone or email" /></label></div><label>Question or Comment<textarea name="question_or_comment" rows="4" required placeholder="Tell us what you are seeing around the roofline or gutters."></textarea></label><button class="btn btn-green" type="submit">Send Guidance Inquiry</button><p class="privacy-note">Your information is used only to respond to your guidance inquiry.</p></form></div></section>
-    <section id="reviews"><div class="wrap cards-row"><form class="action-card" id="reviewForm" action="https://formspree.io/f/mojzrnzp" method="POST"><input type="hidden" name="subject" value="New Cox Gutters Review" /><input type="hidden" name="form_type" value="Customer review" /><label class="hidden-field">Leave empty <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" /></label><h2>Share Your Experience</h2><p>We value your feedback. Share your experience and help other Atlanta homeowners.</p><label>Your Name<input name="reviewer-name" placeholder="Your name" /></label><label>Rating<select name="rating"><option>★★★★★ - Excellent</option><option>★★★★ - Good</option><option>★★★ - Average</option><option>★★ - Needs improvement</option><option>★ - Poor</option></select></label><label>Review<textarea name="review" rows="4" placeholder="Tell us about your experience."></textarea></label><button class="btn btn-outline" type="submit">Leave a Review</button><p class="privacy-note">Your information is used only to receive and follow up on your review if needed.</p></form><article class="action-card"><h2>Customer Feedback</h2><p>Reviews help Cox Gutters improve service, communication, and cleanup after every job.</p><div class="stars">★★★★★</div><div class="chat-art"></div></article></div></section>
-  </main>
-  <footer><div class="wrap footer-grid"><div><div class="footer-logo"><span class="brand-mark"></span><h3>Cox Gutters</h3></div><p>Proudly serving Atlanta, Georgia and surrounding areas.</p></div><div><h4>Contact Us</h4><p>📞 (404) 555-0123</p><p>✉️ <a href="mailto:coxguttercleaning@gmail.com">coxguttercleaning@gmail.com</a></p><p>📍 Atlanta, Georgia and surrounding areas</p></div><div><h4>Our Policies</h4><ul><li>Gutter &amp; downspout cleaning</li><li>Minor shingle repair</li><li>Debris bagging: $20 per filled lawn bag</li><li>Bags left on-site for customer trash pickup</li></ul></div><div><h4>Business Hours</h4><p>Monday – Saturday<br>8:00 AM – 6:00 PM</p><p>Sunday<br>Closed</p></div></div><div class="wrap footer-bottom"><span>© 2026 Cox Gutters. All rights reserved.</span><span>Privacy Policy &nbsp;&nbsp; Terms of Service</span></div></footer>
+<body>
+  <div class="page-shell">
+    <div class="mockup-stage">
+      <img src="images/cox-gutters-homepage-exact-mockup.png" alt="Cox Gutters homepage design" />
+
+      <a class="hotspot nav-services" href="#services-modal">Services</a>
+      <a class="hotspot nav-home-risks" href="#home-risks-modal">Home Risks</a>
+      <a class="hotspot nav-why" href="#why-modal">Why Choose Us</a>
+      <a class="hotspot nav-guidance" href="#guidance-modal">Guidance Inquiry</a>
+      <a class="hotspot nav-review" href="#review-modal">Share Your Experience</a>
+      <a class="hotspot nav-contact" href="mailto:coxguttercleaning@gmail.com">Contact</a>
+      <a class="hotspot nav-estimate" href="#estimate-modal">Request My Estimate</a>
+
+      <a class="hotspot hero-estimate" href="#estimate-modal">Request My Estimate</a>
+      <a class="hotspot hero-question" href="#guidance-modal">Ask a Question</a>
+
+      <a class="hotspot guidance-card" href="#guidance-modal">Submit an Inquiry</a>
+      <a class="hotspot review-card" href="#review-modal">Leave a Review</a>
+      <a class="hotspot footer-email" href="mailto:coxguttercleaning@gmail.com">Email Cox Gutters</a>
+
+      <!-- Invisible form mapped over the mockup estimate form area.
+           This keeps the exact visual while still letting users click/type in that form area on desktop. -->
+      <div class="form-overlay" aria-label="Estimate form overlay">
+        <form class="estimate-form" action="https://formspree.io/f/mojzrnzp" method="POST">
+          <input type="hidden" name="subject" value="New Cox Gutters Estimate Request" />
+          <input type="hidden" name="form_type" value="Estimate request" />
+          <input class="visually-hidden" type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
+
+          <input name="name" required aria-label="Full Name" placeholder="Full Name" />
+          <input name="phone" required aria-label="Phone Number" placeholder="Phone Number" />
+          <input class="full" type="email" name="email" aria-label="Email Address" placeholder="Email Address" />
+          <input class="full" name="address" aria-label="Service Address" placeholder="Service Address" />
+          <input name="city" aria-label="City" placeholder="City" />
+          <input name="zip" aria-label="Zip Code" placeholder="Zip Code" />
+          <select class="full" name="service" required aria-label="Service Needed">
+            <option value="">Select a service</option>
+            <option>Gutter &amp; downspout cleaning</option>
+            <option>Minor shingle repair</option>
+            <option>Guidance / not sure</option>
+          </select>
+          <button class="full" type="submit" aria-label="Submit estimate request">Request My Estimate</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="estimate-modal">
+    <div class="modal">
+      <h2>Request Your Free Estimate</h2>
+      <p>Send your information to Cox Gutters and we will follow up about your Atlanta-area gutter or shingle service request.</p>
+      <form action="https://formspree.io/f/mojzrnzp" method="POST">
+        <input type="hidden" name="subject" value="New Cox Gutters Estimate Request" />
+        <input type="hidden" name="form_type" value="Estimate request" />
+        <input class="visually-hidden" type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
+
+        <div class="two">
+          <label>Full Name <input name="name" required /></label>
+          <label>Phone Number <input name="phone" required /></label>
+        </div>
+        <label>Email Address <input type="email" name="email" /></label>
+        <label>Service Address <input name="address" /></label>
+        <div class="two">
+          <label>City <input name="city" /></label>
+          <label>Zip Code <input name="zip" /></label>
+        </div>
+        <label>
+          Service Needed
+          <select name="service" required>
+            <option value="">Select a service</option>
+            <option>Gutter &amp; downspout cleaning</option>
+            <option>Minor shingle repair</option>
+            <option>Guidance / not sure</option>
+          </select>
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" name="debris_bagging_requested" value="Yes, customer requested debris bagging at $20 per filled lawn bag" />
+          <span>Debris bagging requested — $20 per filled lawn bag. Filled bags are left on-site for customer trash pickup.</span>
+        </label>
+        <label>Notes <textarea name="notes" rows="4"></textarea></label>
+        <button type="submit">Request My Estimate</button>
+        <p class="privacy">Your information is used only to respond to your estimate request.</p>
+      </form>
+      <a class="button close" href="#">Close</a>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="guidance-modal">
+    <div class="modal">
+      <h2>Guidance Inquiry</h2>
+      <p>Not sure what your home needs? Ask a question before scheduling service.</p>
+      <form action="https://formspree.io/f/mojzrnzp" method="POST">
+        <input type="hidden" name="subject" value="New Cox Gutters Guidance Inquiry" />
+        <input type="hidden" name="form_type" value="Guidance inquiry" />
+        <input class="visually-hidden" type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
+
+        <div class="two">
+          <label>Name <input name="name" /></label>
+          <label>Phone or Email <input name="contact" required /></label>
+        </div>
+        <label>Question or Comment <textarea name="question_or_comment" rows="5" required></textarea></label>
+        <button type="submit">Send Guidance Inquiry</button>
+        <p class="privacy">Your information is used only to respond to your guidance inquiry.</p>
+      </form>
+      <a class="button close" href="#">Close</a>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="review-modal">
+    <div class="modal">
+      <h2>Share Your Experience</h2>
+      <p>Leave feedback for Cox Gutters.</p>
+      <form action="https://formspree.io/f/mojzrnzp" method="POST">
+        <input type="hidden" name="subject" value="New Cox Gutters Review" />
+        <input type="hidden" name="form_type" value="Customer review" />
+        <input class="visually-hidden" type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
+
+        <label>Your Name <input name="reviewer-name" /></label>
+        <label>
+          Rating
+          <select name="rating">
+            <option>★★★★★ - Excellent</option>
+            <option>★★★★ - Good</option>
+            <option>★★★ - Average</option>
+            <option>★★ - Needs improvement</option>
+            <option>★ - Poor</option>
+          </select>
+        </label>
+        <label>Review <textarea name="review" rows="5"></textarea></label>
+        <button type="submit">Leave a Review</button>
+        <p class="privacy">Your information is used only to receive and follow up on your review if needed.</p>
+      </form>
+      <a class="button close" href="#">Close</a>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="services-modal">
+    <div class="modal">
+      <h2>Cox Gutters Services</h2>
+      <p>Gutter & downspout cleaning, minor shingle repair, and debris bagging at $20 per filled lawn bag. Filled bags are left on-site for customer trash pickup.</p>
+      <a class="button" href="#estimate-modal">Request Estimate</a>
+      <a class="button close" href="#">Close</a>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="home-risks-modal">
+    <div class="modal">
+      <h2>Home Risks</h2>
+      <p>Clogged gutters can contribute to water damage, roofline issues, pest problems, mold, and costly repairs if left unchecked.</p>
+      <a class="button" href="#estimate-modal">Request Estimate</a>
+      <a class="button close" href="#">Close</a>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="why-modal">
+    <div class="modal">
+      <h2>Why Choose Cox Gutters</h2>
+      <p>Local Atlanta service, clear communication, upfront expectations, respectful cleanup, and simple gutter maintenance support.</p>
+      <a class="button" href="#estimate-modal">Request Estimate</a>
+      <a class="button close" href="#">Close</a>
+    </div>
+  </div>
 </body>
 </html>
