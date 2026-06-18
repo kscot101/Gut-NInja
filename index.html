@@ -1525,6 +1525,102 @@
       flex: 0 0 auto;
     }
 
+
+    /* Account mode: after login, the page becomes a customer dashboard */
+    body.account-mode header {
+      position: sticky;
+    }
+
+    body.account-mode .hero,
+    body.account-mode .repeat-callout,
+    body.account-mode #services,
+    body.account-mode #home-risks,
+    body.account-mode #why-choose,
+    body.account-mode #checker,
+    body.account-mode #reviews,
+    body.account-mode footer {
+      display: none !important;
+    }
+
+    body.account-mode #repeat-service {
+      display: block !important;
+      min-height: calc(100vh - 82px);
+      padding: 3rem 0;
+      background:
+        radial-gradient(circle at 80% 12%, rgba(255,245,160,.34), transparent 12rem),
+        linear-gradient(180deg, #f7fbf4, #ffffff);
+    }
+
+    body.account-mode .repeat-panel {
+      grid-template-columns: .8fr 1.2fr;
+      align-items: start;
+      max-width: 1180px;
+      margin: 0 auto;
+      background: #fff;
+      border-color: #dcebd6;
+      box-shadow: 0 20px 55px rgba(16,32,51,.12);
+    }
+
+    body.account-mode .repeat-intro h2::before {
+      content: "Customer Dashboard";
+      display: block;
+      width: fit-content;
+      margin-bottom: .65rem;
+      padding: .35rem .65rem;
+      border-radius: 999px;
+      background: #eaf3e6;
+      color: var(--green);
+      font-size: .78rem;
+      font-weight: 950;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    body.account-mode .repeat-intro .repeat-note {
+      background: #f8faf6;
+      border: 1px solid #e0e7dd;
+      border-radius: 10px;
+      padding: .9rem;
+    }
+
+    body.account-mode .nav-links {
+      display: flex;
+    }
+
+    body.account-mode .nav-links a:not(.account-nav-link) {
+      display: none;
+    }
+
+    body.account-mode .nav-links::before {
+      content: "Account";
+      color: var(--green);
+      font-weight: 950;
+    }
+
+    .account-nav-link {
+      display: none;
+    }
+
+    body.account-mode .account-nav-link {
+      display: inline-flex;
+    }
+
+    @media (max-width: 720px) {
+      body.account-mode #repeat-service {
+        min-height: calc(100vh - 76px);
+        padding: 1.25rem 0 2rem;
+      }
+
+      body.account-mode .repeat-panel {
+        grid-template-columns: 1fr;
+        border-radius: 14px;
+      }
+
+      body.account-mode .nav-links {
+        display: none;
+      }
+    }
+
   </style>
 </head>
 
@@ -1544,7 +1640,8 @@
         <a href="#repeat-service">Repeat Service</a>
         <a href="#why-choose">Why Choose Us</a>
         <a href="#email-modal">Contact</a>
-      </nav>
+      
+        <a class="account-nav-link" href="#repeat-service">My Account</a></nav>
 
       <a class="btn btn-orange" href="#quote">Request My Estimate</a>
             <a class="btn btn-green" href="#repeat-service">Request Repeat Service</a>
@@ -1669,7 +1766,7 @@
         <div class="repeat-panel">
           <div class="repeat-intro">
             <h2>Request Repeat Service</h2>
-            <p>Create an account or log in to request recurring gutter cleaning and save your repeat-service preferences.</p>
+            <p>Create an account or log in to request recurring gutter cleaning. After login, this page becomes your customer dashboard.</p>
             <ul class="repeat-steps">
               <li><span>1</span> Create an account or log in.</li>
               <li><span>2</span> Save your service address and preferred schedule.</li>
@@ -1681,6 +1778,7 @@
           <div class="account-box">
             <div id="authLoggedIn" class="auth-logged-in">
               <span id="authUserEmail">Logged in</span>
+              <button class="small-btn" id="viewPublicSiteButton" type="button">View Public Site</button>
               <button class="small-btn" id="logoutButton" type="button">Log Out</button>
             </div>
 
@@ -2073,6 +2171,7 @@
     const signupButton = document.getElementById("signupButton");
     const loginButton = document.getElementById("loginButton");
     const logoutButton = document.getElementById("logoutButton");
+    const viewPublicSiteButton = document.getElementById("viewPublicSiteButton");
     const accountStatus = document.getElementById("accountStatus");
     const authPanel = document.getElementById("authPanel");
     const authLoggedIn = document.getElementById("authLoggedIn");
@@ -2090,8 +2189,17 @@
       if (type) accountStatus.classList.add(type);
     }
 
+    function setAccountMode(isLoggedIn) {
+      document.body.classList.toggle("account-mode", Boolean(isLoggedIn));
+
+      if (isLoggedIn && window.location.hash !== "#repeat-service") {
+        history.replaceState(null, "", "#repeat-service");
+      }
+    }
+
     function setLoggedInUI(user) {
       currentUser = user;
+      setAccountMode(Boolean(user));
       if (authPanel) authPanel.style.display = user ? "none" : "block";
       if (authLoggedIn) authLoggedIn.classList.toggle("is-visible", Boolean(user));
       if (repeatServiceForm) repeatServiceForm.classList.toggle("is-visible", Boolean(user));
@@ -2220,6 +2328,14 @@
       });
     }
 
+    if (viewPublicSiteButton) {
+      viewPublicSiteButton.addEventListener("click", () => {
+        document.body.classList.remove("account-mode");
+        history.replaceState(null, "", window.location.pathname);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    }
+
     if (logoutButton) {
       logoutButton.addEventListener("click", async () => {
         await repeatSupabase.auth.signOut();
@@ -2228,6 +2344,7 @@
         setLoggedInUI(null);
         updateDashboard(null);
         if (repeatServiceForm) repeatServiceForm.reset();
+        history.replaceState(null, "", window.location.pathname);
         setStatus("You have been logged out.");
       });
     }
@@ -2284,6 +2401,13 @@
         setStatus("Repeat-service preferences saved. Cox Gutter Cleaning LLC can now follow up with this information.", "success");
       });
     }
+
+    const accountNavLinks = document.querySelectorAll(".account-nav-link, a[href='#repeat-service']");
+    accountNavLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        if (currentUser) setAccountMode(true);
+      });
+    });
 
     repeatSupabase.auth.onAuthStateChange((_event, session) => {
       if (session?.user) {
