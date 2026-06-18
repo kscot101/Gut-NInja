@@ -133,7 +133,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 1.15rem;
+      gap: 1.55rem;
       font-weight: 950;
       font-size: .92rem;
       color: #102033;
@@ -1487,6 +1487,44 @@
       margin: .4rem 0 0;
     }
 
+
+    .repeat-callout {
+      padding: 1.4rem 0;
+      background: #fff;
+    }
+
+    .repeat-callout-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      background: linear-gradient(135deg, #104b2d, #0a3320);
+      color: #fff;
+      border-radius: 14px;
+      padding: 1.15rem 1.35rem;
+      box-shadow: 0 14px 34px rgba(16,32,51,.14);
+    }
+
+    .repeat-callout-box strong {
+      display: block;
+      font-size: 1.25rem;
+      line-height: 1.15;
+      letter-spacing: -.025em;
+    }
+
+    .repeat-callout-box p {
+      margin: .25rem 0 0;
+      color: #dceedd;
+      font-weight: 750;
+    }
+
+    .repeat-callout-box .btn-green {
+      background: #fff;
+      color: var(--green);
+      box-shadow: none;
+      flex: 0 0 auto;
+    }
+
   </style>
 </head>
 
@@ -1503,15 +1541,13 @@
 
       <nav class="nav-links" aria-label="Main navigation">
         <a href="#services">Services</a>
-        <a href="#home-risks">Home Risks</a>
-        <a href="#why-choose">Why Choose Us</a>
         <a href="#repeat-service">Repeat Service</a>
-        <a href="#checker">Guidance Inquiry</a>
-        <a href="#reviews">Share Your Experience</a>
+        <a href="#why-choose">Why Choose Us</a>
         <a href="#email-modal">Contact</a>
       </nav>
 
       <a class="btn btn-orange" href="#quote">Request My Estimate</a>
+            <a class="btn btn-green" href="#repeat-service">Request Repeat Service</a>
     </div>
   </header>
 
@@ -1616,101 +1652,14 @@
       </div>
     </section>
 
-    <section id="services">
-      <div class="wrap">
-        <div class="section-title">
-          <h2>Our Services</h2>
-          <div class="title-line"></div>
+
+    <section class="repeat-callout" aria-label="Repeat service callout">
+      <div class="wrap repeat-callout-box">
+        <div>
+          <strong>Want recurring gutter cleaning?</strong>
+          <p>Create a repeat-service account so Cox Gutter Cleaning LLC can follow up about a schedule for your home.</p>
         </div>
-
-        <div class="services-grid">
-          <article class="service-card">
-            <div class="icon-circle">🍃</div>
-            <h3>Gutter &amp; Downspout Cleaning</h3>
-            <p>We remove leaves, pine needles, and debris to help your gutters drain properly.</p>
-          </article>
-
-          <article class="service-card">
-            <div class="icon-circle">🏠</div>
-            <h3>Minor Shingle Repair</h3>
-            <p>We replace a few damaged or lifted shingles to help protect your roof and home.</p>
-          </article>
-
-          <article class="service-card">
-            <div class="icon-circle">🛍️</div>
-            <h3>Debris Bagging</h3>
-            <p>$20 per filled lawn bag. Bags are left on-site for customer trash pickup.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="home-risks">
-      <div class="wrap">
-        <div class="damage-panel">
-          <h2>Protect Your Home from Costly Damage</h2>
-
-          <div class="damage-grid">
-            <article class="damage-item">
-              <div class="damage-icon">💧</div>
-              <div>
-                <h3>Water Damage</h3>
-                <p>Clogged gutters can cause overflow, leading to roof leaks, wall damage, and foundation issues.</p>
-              </div>
-            </article>
-
-            <article class="damage-item">
-              <div class="damage-icon">🛡️</div>
-              <div>
-                <h3>Roof Damage</h3>
-                <p>Trapped moisture and debris can rot fascia, damage shingles, and shorten the life of your roof.</p>
-              </div>
-            </article>
-
-            <article class="damage-item">
-              <div class="damage-icon">🏡</div>
-              <div>
-                <h3>Pests &amp; Mold</h3>
-                <p>Standing water attracts pests and encourages mold, mildew, and algae growth.</p>
-              </div>
-            </article>
-
-            <article class="damage-item">
-              <div class="damage-icon">📈</div>
-              <div>
-                <h3>Costly Repairs</h3>
-                <p>Small issues left unchecked can lead to expensive repairs. Preventive care saves money.</p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="why-choose">
-      <div class="wrap">
-        <div class="why-panel">
-          <div>
-            <h2>Why Atlanta Homeowners Choose Cox Gutter Cleaning LLC</h2>
-            <p>We combine friendly service, honest communication, and attention to detail to keep your home protected year-round.</p>
-            <ul class="check-list">
-              <li>Local, reliable, and family-focused</li>
-              <li>Clear communication and upfront expectations</li>
-              <li>Respectful of your home and property</li>
-              <li>No water-flow check — we focus on visible cleaning and debris removal</li>
-              <li>Debris bagging available at $20 per filled lawn bag</li>
-            </ul>
-          </div>
-
-          <div class="why-image">
-            <div class="why-badge">
-              <span>✓</span>
-              Quality Service.<br />
-              Honest Work.<br />
-              Peace of Mind.
-            </div>
-          </div>
-        </div>
+        <a class="btn btn-green" href="#repeat-service">Request Repeat Service</a>
       </div>
     </section>
 
@@ -1719,8 +1668,8 @@
       <div class="wrap">
         <div class="repeat-panel">
           <div class="repeat-intro">
-            <h2>Repeat Service Account</h2>
-            <p>Create an account to request recurring gutter cleaning and manage your repeat-service preferences.</p>
+            <h2>Request Repeat Service</h2>
+            <p>Create an account or log in to request recurring gutter cleaning and save your repeat-service preferences.</p>
             <ul class="repeat-steps">
               <li><span>1</span> Create an account or log in.</li>
               <li><span>2</span> Save your service address and preferred schedule.</li>
@@ -1850,6 +1799,105 @@
         </div>
       </div>
     </section>
+
+    <section id="services">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>Our Services</h2>
+          <div class="title-line"></div>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="icon-circle">🍃</div>
+            <h3>Gutter &amp; Downspout Cleaning</h3>
+            <p>We remove leaves, pine needles, and debris to help your gutters drain properly.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="icon-circle">🏠</div>
+            <h3>Minor Shingle Repair</h3>
+            <p>We replace a few damaged or lifted shingles to help protect your roof and home.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="icon-circle">🛍️</div>
+            <h3>Debris Bagging</h3>
+            <p>$20 per filled lawn bag. Bags are left on-site for customer trash pickup.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="home-risks">
+      <div class="wrap">
+        <div class="damage-panel">
+          <h2>Protect Your Home from Costly Damage</h2>
+
+          <div class="damage-grid">
+            <article class="damage-item">
+              <div class="damage-icon">💧</div>
+              <div>
+                <h3>Water Damage</h3>
+                <p>Clogged gutters can cause overflow, leading to roof leaks, wall damage, and foundation issues.</p>
+              </div>
+            </article>
+
+            <article class="damage-item">
+              <div class="damage-icon">🛡️</div>
+              <div>
+                <h3>Roof Damage</h3>
+                <p>Trapped moisture and debris can rot fascia, damage shingles, and shorten the life of your roof.</p>
+              </div>
+            </article>
+
+            <article class="damage-item">
+              <div class="damage-icon">🏡</div>
+              <div>
+                <h3>Pests &amp; Mold</h3>
+                <p>Standing water attracts pests and encourages mold, mildew, and algae growth.</p>
+              </div>
+            </article>
+
+            <article class="damage-item">
+              <div class="damage-icon">📈</div>
+              <div>
+                <h3>Costly Repairs</h3>
+                <p>Small issues left unchecked can lead to expensive repairs. Preventive care saves money.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="why-choose">
+      <div class="wrap">
+        <div class="why-panel">
+          <div>
+            <h2>Why Atlanta Homeowners Choose Cox Gutter Cleaning LLC</h2>
+            <p>We combine friendly service, honest communication, and attention to detail to keep your home protected year-round.</p>
+            <ul class="check-list">
+              <li>Local, reliable, and family-focused</li>
+              <li>Clear communication and upfront expectations</li>
+              <li>Respectful of your home and property</li>
+              <li>No water-flow check — we focus on visible cleaning and debris removal</li>
+              <li>Debris bagging available at $20 per filled lawn bag</li>
+            </ul>
+          </div>
+
+          <div class="why-image">
+            <div class="why-badge">
+              <span>✓</span>
+              Quality Service.<br />
+              Honest Work.<br />
+              Peace of Mind.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
 
     <section id="checker">
       <div class="wrap cards-row">
