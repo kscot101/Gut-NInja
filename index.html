@@ -1621,6 +1621,76 @@
       }
     }
 
+
+    .logged-in-estimate-card {
+      display: none;
+      margin: 1rem 0 0;
+      padding: 1rem;
+      border-radius: 12px;
+      border: 1px solid #ffd8c9;
+      background: #fff7f3;
+      gap: 1rem;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logged-in-estimate-card strong {
+      display: block;
+      color: var(--ink);
+      font-size: 1.05rem;
+      margin-bottom: .2rem;
+    }
+
+    .logged-in-estimate-card p {
+      margin: 0;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .dashboard-estimate-form {
+      display: none;
+      margin-top: 1rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--line);
+      gap: .75rem;
+    }
+
+    body.account-mode .logged-in-estimate-card {
+      display: flex;
+    }
+
+    body.account-mode .dashboard-estimate-form:target {
+      display: grid;
+    }
+
+    .account-signup-modal .field-row {
+      margin-bottom: .75rem;
+    }
+
+    @media (max-width: 720px) {
+      .logged-in-estimate-card {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .logged-in-estimate-card .btn {
+        width: 100%;
+      }
+    }
+
+
+    .nav-links .nav-signup-btn {
+      color: #fff;
+      padding: .72rem 1rem;
+      font-size: .82rem;
+      box-shadow: 0 10px 22px rgba(230,84,18,.22);
+    }
+
+    .nav-links .nav-signup-btn:hover {
+      color: #fff;
+      background: var(--orange-dark);
+    }
+
   </style>
 </head>
 
@@ -1636,12 +1706,13 @@
       </a>
 
       <nav class="nav-links" aria-label="Main navigation">
+        <a class="btn btn-orange nav-signup-btn" href="#signup-modal">Sign Up</a>
         <a href="#services">Services</a>
-        <a href="#repeat-service">Repeat Service</a>
         <a href="#why-choose">Why Choose Us</a>
         <a href="#email-modal">Contact</a>
-      
-        <a class="account-nav-link" href="#repeat-service">My Account</a></nav>
+        <a class="account-nav-link" href="#repeat-service">My Account</a>
+        <a class="account-nav-link account-estimate-nav-link" href="#dashboard-estimate">Request Estimate</a>
+      </nav>
 
       <a class="btn btn-orange" href="#quote">Request My Estimate</a>
             <a class="btn btn-green" href="#repeat-service">Request Repeat Service</a>
@@ -1811,6 +1882,64 @@
               <p id="savedAddress">No saved address yet.</p>
               <p id="savedService">No saved service yet.</p>
             </div>
+
+
+            <div id="loggedInEstimateCard" class="logged-in-estimate-card">
+              <div>
+                <strong>Need a one-time estimate too?</strong>
+                <p>You can still request a regular estimate while logged into your account.</p>
+              </div>
+              <a class="btn btn-orange" href="#dashboard-estimate">Request Estimate</a>
+            </div>
+
+            <form id="dashboard-estimate" class="dashboard-estimate-form" action="https://formspree.io/f/mojzrnzp" method="POST">
+              <input type="hidden" name="subject" value="New Cox Gutter Cleaning LLC Estimate Request" />
+              <input type="hidden" name="form_type" value="Logged-in estimate request" />
+              <label class="hidden-field">Leave this field empty <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" /></label>
+
+              <h3>Request an Estimate</h3>
+              <p>Use this if you need a one-time estimate or have a service need outside your repeat-service schedule.</p>
+
+              <div class="field-row">
+                <label>
+                  Full Name
+                  <input id="dashboardEstimateName" name="name" required placeholder="Full Name" />
+                </label>
+                <label>
+                  Phone Number
+                  <input id="dashboardEstimatePhone" name="phone" required placeholder="404-821-6227" />
+                </label>
+              </div>
+
+              <label>
+                Email Address
+                <input id="dashboardEstimateEmail" type="email" name="email" placeholder="you@example.com" />
+              </label>
+
+              <label>
+                Service Address
+                <input id="dashboardEstimateAddress" name="address" placeholder="Service Address" />
+              </label>
+
+              <label>
+                Service Needed
+                <select name="service" required>
+                  <option value="">Select a service</option>
+                  <option>Gutter &amp; downspout cleaning</option>
+                  <option>Minor shingle repair</option>
+                  <option>Guidance / not sure</option>
+                  <option>Repeat service question</option>
+                </select>
+              </label>
+
+              <label>
+                Notes
+                <textarea name="notes" rows="4" placeholder="Tell us what you need an estimate for."></textarea>
+              </label>
+
+              <button class="btn btn-orange" type="submit">Submit Estimate Request</button>
+              <p class="privacy-note">Your estimate request is sent through Formspree so Cox Gutter Cleaning LLC can follow up.</p>
+            </form>
 
             <form id="repeatServiceForm" class="repeat-form">
               <h3>Repeat Service Preferences</h3>
@@ -2160,6 +2289,34 @@
   </div>
 
 
+
+  <div class="modal-backdrop" id="signup-modal">
+    <div class="email-modal account-signup-modal">
+      <h2>Create Your Account</h2>
+      <p>Create an account or log in to request repeat service and manage saved service preferences.</p>
+
+      <div class="field-row">
+        <label>
+          Email
+          <input id="modalAccountEmail" type="email" autocomplete="email" placeholder="you@example.com" />
+        </label>
+        <label>
+          Password
+          <input id="modalAccountPassword" type="password" autocomplete="current-password" placeholder="Minimum 6 characters" />
+        </label>
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn btn-green" id="modalSignupButton" type="button">Create Account</button>
+        <button class="btn btn-outline" id="modalLoginButton" type="button">Log In</button>
+        <a class="modal-close" href="#">Close</a>
+      </div>
+
+      <div id="modalAccountStatus" class="account-status">Create an account to save repeat-service preferences.</div>
+      <p class="privacy-note">After logging in, you will be taken to the repeat-service account page.</p>
+    </div>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script>
     const SUPABASE_URL = "https://ggcjdftwruugboyxrpyd.supabase.co";
@@ -2168,11 +2325,16 @@
 
     const accountEmail = document.getElementById("accountEmail");
     const accountPassword = document.getElementById("accountPassword");
+    const modalAccountEmail = document.getElementById("modalAccountEmail");
+    const modalAccountPassword = document.getElementById("modalAccountPassword");
     const signupButton = document.getElementById("signupButton");
+    const modalSignupButton = document.getElementById("modalSignupButton");
     const loginButton = document.getElementById("loginButton");
+    const modalLoginButton = document.getElementById("modalLoginButton");
     const logoutButton = document.getElementById("logoutButton");
     const viewPublicSiteButton = document.getElementById("viewPublicSiteButton");
     const accountStatus = document.getElementById("accountStatus");
+    const modalAccountStatus = document.getElementById("modalAccountStatus");
     const authPanel = document.getElementById("authPanel");
     const authLoggedIn = document.getElementById("authLoggedIn");
     const authUserEmail = document.getElementById("authUserEmail");
@@ -2183,10 +2345,17 @@
     let currentRepeatRequestId = null;
 
     function setStatus(message, type = "") {
-      if (!accountStatus) return;
-      accountStatus.textContent = message;
-      accountStatus.className = "account-status";
-      if (type) accountStatus.classList.add(type);
+      if (accountStatus) {
+        accountStatus.textContent = message;
+        accountStatus.className = "account-status";
+        if (type) accountStatus.classList.add(type);
+      }
+
+      if (modalAccountStatus) {
+        modalAccountStatus.textContent = message;
+        modalAccountStatus.className = "account-status";
+        if (type) modalAccountStatus.classList.add(type);
+      }
     }
 
     function setAccountMode(isLoggedIn) {
@@ -2206,6 +2375,13 @@
       if (authUserEmail && user) authUserEmail.textContent = "Logged in as " + user.email;
       const repeatEmail = document.getElementById("repeatEmail");
       if (repeatEmail && user?.email && !repeatEmail.value) repeatEmail.value = user.email;
+
+      const dashboardEstimateEmail = document.getElementById("dashboardEstimateEmail");
+      if (dashboardEstimateEmail && user?.email && !dashboardEstimateEmail.value) dashboardEstimateEmail.value = user.email;
+
+      if (user && window.location.hash === "#signup-modal") {
+        history.replaceState(null, "", "#repeat-service");
+      }
     }
 
     function updateDashboard(data) {
@@ -2239,6 +2415,16 @@
       document.getElementById("repeatDayTime").value = data.preferred_day_time || "";
       document.getElementById("repeatDebris").checked = Boolean(data.debris_bagging_requested);
       document.getElementById("repeatNotes").value = data.notes || "";
+
+      const dashboardEstimateName = document.getElementById("dashboardEstimateName");
+      const dashboardEstimatePhone = document.getElementById("dashboardEstimatePhone");
+      const dashboardEstimateEmail = document.getElementById("dashboardEstimateEmail");
+      const dashboardEstimateAddress = document.getElementById("dashboardEstimateAddress");
+
+      if (dashboardEstimateName && !dashboardEstimateName.value) dashboardEstimateName.value = data.full_name || "";
+      if (dashboardEstimatePhone && !dashboardEstimatePhone.value) dashboardEstimatePhone.value = data.phone || "";
+      if (dashboardEstimateEmail && !dashboardEstimateEmail.value) dashboardEstimateEmail.value = data.email || currentUser?.email || "";
+      if (dashboardEstimateAddress && !dashboardEstimateAddress.value) dashboardEstimateAddress.value = data.service_address || "";
     }
 
     async function loadRepeatRequest() {
@@ -2333,6 +2519,59 @@
         document.body.classList.remove("account-mode");
         history.replaceState(null, "", window.location.pathname);
         window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    }
+
+
+    if (modalSignupButton) {
+      modalSignupButton.addEventListener("click", async () => {
+        const email = modalAccountEmail.value.trim();
+        const password = modalAccountPassword.value;
+
+        if (!email || !password) {
+          setStatus("Enter an email and password first.", "error");
+          return;
+        }
+
+        const { data, error } = await repeatSupabase.auth.signUp({
+          email,
+          password,
+          options: { emailRedirectTo: window.location.origin + window.location.pathname + "#repeat-service" }
+        });
+
+        if (error) {
+          setStatus(error.message, "error");
+          return;
+        }
+
+        if (data?.session) {
+          setLoggedInUI(data.user);
+          await loadRepeatRequest();
+        } else {
+          setStatus("Account created. Check your email to confirm your account, then come back and log in.", "success");
+        }
+      });
+    }
+
+    if (modalLoginButton) {
+      modalLoginButton.addEventListener("click", async () => {
+        const email = modalAccountEmail.value.trim();
+        const password = modalAccountPassword.value;
+
+        if (!email || !password) {
+          setStatus("Enter your email and password first.", "error");
+          return;
+        }
+
+        const { data, error } = await repeatSupabase.auth.signInWithPassword({ email, password });
+
+        if (error) {
+          setStatus(error.message, "error");
+          return;
+        }
+
+        setLoggedInUI(data.user);
+        await loadRepeatRequest();
       });
     }
 
